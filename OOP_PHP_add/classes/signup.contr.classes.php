@@ -1,3 +1,5 @@
 <?php 
 
-classes
+classes SignupContr{
+    
+}
