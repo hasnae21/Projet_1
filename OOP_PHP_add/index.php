@@ -8,7 +8,7 @@
     <title>login page</title>
 </head>
 
-<body style="display:flex; align-items:center; margin:15%;">
+<body style="display:flex; align-items:center; margin:25%;">
     <section>
         <form action="includes/login.inc.php" method="POST">
 
