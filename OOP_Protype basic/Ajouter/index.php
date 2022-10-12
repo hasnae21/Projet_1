@@ -13,9 +13,10 @@
         <h2>Add Promotion</h2>
 
         <form method="post">
+            
                 <label> Promotion name:</label>
-                <input type="text" placeholder="enter promotion name" />
-                <button type="submit"> Insert</button>
+                <input type="text"/>
+                <button type="submit"> Envoyer</button>
         </form>
     </center>
 
