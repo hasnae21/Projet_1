@@ -1,18 +1,30 @@
-<?php
 
-class dbconfig
-{
-    public $connection;
-    public function db_connect()
+<?php 
+    session_start();
+    require_once('./config/operations.php');
+
+    class dbconfig
     {
-        $this->connection = mysqli_connect('localhost','root','','projet_1');
-        if(mysqli_connect_error()){
-            die("Connection Failed");
+        public $connection;
+
+        public function __construct()
+        {
+            $this->db_connect();
         }
-    } 
-}
+       
+        public function db_connect()
+        {
+            $this->connection = mysqli_connect('localhost','root','','projet_1');
+            if(mysqli_connect_error())
+            {
+                die(" Connection Failed ");
+            }
+        }
 
-$db = new dbconfig();
-echo $db->db_connect();
-
+        public function check($a)
+        {
+            $return = mysqli_real_escape_string($this->connection,$a);
+            return $return;
+        }
+    }
 ?>
