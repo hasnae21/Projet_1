@@ -24,7 +24,6 @@
             }
         }
 
-
       // Insert Record in the Database Using Query    
         function insert_record($a)
         {
@@ -59,6 +58,49 @@
             $data = mysqli_query($db->connection,$sql);
             return $data;
         }
-
     }
-?>
+
+?>    
+<?php 
+        // Update Record
+        function update()
+        {
+            global $db;
+            
+            if(isset($_POST['btn_update']))
+            {
+                $ID = $_POST['ID'];
+                $FirstName = $db->check($_POST['First']);
+                $LastName = $db->check($_POST['Last']);
+                $UserName = $db->check($_POST['UserName']);
+                $Email = $db->check($_POST['UserEmail']);
+                
+                if($this->update_record($ID,$FirstName,$LastName,$UserName,$Email ))
+                {
+                    $this->set_messsage('<div class="alert alert-success"> Your Record Has Been Updated : )</div>');
+              header("location:view.php");
+          }
+          else
+          {   
+              $this->set_messsage('<div class="alert alert-success"> Something Wrong : )</div>');
+          }
+          
+          
+        } 
+    
+        
+        // Update Function 2
+        function update_record($id,$first,$Last,$User,$Email)
+        {
+            global $db;
+            $sql = "update employees set FirstName='$first', LastName='$Last', UserName='$User', Email='$Email' where ID='$id'";
+            $result = mysqli_query($db->connection,$sql);
+            if($result)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
