@@ -26,8 +26,8 @@
 
             <td><?php echo $data['id'] ?></td>
             <td><?php echo $data['name'] ?></td>
-            <td><a href="edit.php?U_ID=<?php echo $data['id'] ?>"> Edit </a></td>
-            <td><a href="del.php?D_ID=<?php echo $data['id'] ?>"> Delet </a></td>
+            <td><a href="edit.php?id=<?php echo $data['id'] ?>"> Edit </a></td>
+            <td><a href="del.php?id=<?php echo $data['id'] ?>"> Delet </a></td>
         </tr>
             <?php } ?>
     </table>

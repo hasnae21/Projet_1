@@ -1,6 +1,6 @@
 <?php
 
-require_once('./operations.php');
+require_once('./config/operations.php');
 $db = new operations();
 ?>
 

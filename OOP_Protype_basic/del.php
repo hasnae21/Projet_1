@@ -3,10 +3,9 @@
     require_once('./config/dbconfig.php');
     $db = new operations();
     
-    if(isset($_GET['D_ID']))
-    {
+    if(isset($_GET['id'])){
         global $db;
-        $id = $_GET['D_ID'];
+        $id = $_GET['id'];
 
         if($db->Delete_Record($id)){
 

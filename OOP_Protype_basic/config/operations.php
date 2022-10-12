@@ -11,9 +11,9 @@ class operations extends dbconfig
     {
         global $db;
         if (isset($_POST['btn_save'])) {
-            $promo_name = $db->check($_POST['promo_name']);
+            $name = $db->check($_POST['promo_name']);
 
-            if ($this->insert_record($promo_name)) {
+            if ($this->insert_record($name)) {
                 echo '<div class="alert alert-success"> Your Record Has Been Saved :) </div>';
             } else {
                 echo '<div class="alert alert-danger"> Failed ): </div>';
@@ -48,7 +48,7 @@ class operations extends dbconfig
     public function get_record($id)
     {
         global $db;
-        $sql = "select * from promotion where ID='$id'";
+        $sql = "select * from promotion where id='$id'";
         $data = mysqli_query($db->con, $sql);
         return $data;
     }
@@ -60,14 +60,11 @@ class operations extends dbconfig
         global $db;
 
         if (isset($_POST['btn_update'])) {
-            $ID = $_POST['ID'];
-            $FirstName = $db->check($_POST['First']);
-            $LastName = $db->check($_POST['Last']);
-            $UserName = $db->check($_POST['UserName']);
-            $Email = $db->check($_POST['UserEmail']);
+            $id = $_POST['id'];
+            $name = $db->check($_POST['name']);
 
-            if ($this->update_record($ID, $FirstName, $LastName, $UserName, $Email)) {
-                $this->set_messsage('<div class="alert alert-success"> Your Record Has Been Updated : )</div>');
+            if ($this->update_record($id, $name)) {
+                $this->set_messsage('<div> Your Record Has Been Updated : )</div>');
                 header("location:view.php");
             } else {
                 $this->set_messsage('<div class="alert alert-success"> Something Wrong : )</div>');
@@ -77,10 +74,10 @@ class operations extends dbconfig
 
 
     // Update Function 2
-    public function update_record($id, $first, $Last, $User, $Email)
+    public function update_record($id, $name)
     {
         global $db;
-        $sql = "update employees set FirstName='$first', LastName='$Last', UserName='$User', Email='$Email' where ID='$id'";
+        $sql = "update promotion set name='$name' where id='$id'";
         $result = mysqli_query($db->con, $sql);
         if ($result) {
             return true;
