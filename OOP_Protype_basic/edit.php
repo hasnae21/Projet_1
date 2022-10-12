@@ -3,6 +3,7 @@
     require('./config/dbconfig.php'); 
     $db = new operations();
     $db->update();
+    
     $id = $_GET['id'];
     $result = $db->get_record($id);
     $data = mysqli_fetch_assoc($result);
