@@ -3,8 +3,10 @@
 require_once('./config/dbconfig.php');
 $db = new dbconfig();
 
+
 class operations extends dbconfig
 {
+
     // Insert Record in the Database
     public function Store_Record()
     {
@@ -25,7 +27,7 @@ class operations extends dbconfig
     {
         global $db;
         $query = "insert into promotion (name) values('$a')";
-        $result = mysqli_query($db->connection, $query);
+        $result = mysqli_query($db->con, $query);
 
         if ($result) {
             return true;
@@ -39,7 +41,7 @@ class operations extends dbconfig
     {
         global $db;
         $query = "select * from promotion";
-        $result = mysqli_query($db->connection, $query);
+        $result = mysqli_query($db->con, $query);
         return $result;
     }
 
@@ -48,7 +50,7 @@ class operations extends dbconfig
     {
         global $db;
         $sql = "select * from promotion where ID='$id'";
-        $data = mysqli_query($db->connection, $sql);
+        $data = mysqli_query($db->con, $sql);
         return $data;
     }
 
@@ -80,7 +82,7 @@ class operations extends dbconfig
     {
         global $db;
         $sql = "update employees set FirstName='$first', LastName='$Last', UserName='$User', Email='$Email' where ID='$id'";
-        $result = mysqli_query($db->connection, $sql);
+        $result = mysqli_query($db->con, $sql);
         if ($result) {
             return true;
         } else {

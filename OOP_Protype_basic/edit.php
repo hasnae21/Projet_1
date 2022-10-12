@@ -1,5 +1,6 @@
 <?php 
-    require_once('./config/dbconfig.php'); 
+
+    require('./config/dbconfig.php'); 
     $db = new operations();
     $db->update();
     $id = $_GET['U_ID'];

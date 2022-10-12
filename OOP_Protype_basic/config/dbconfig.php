@@ -12,6 +12,7 @@ class dbconfig
 
     public function db_connect(){
         $this->con = mysqli_connect('localhost', 'root', '', 'projet_1');
+        
         if (mysqli_connect_error()) {
             die(" Database Connection Failed ):");
         }
