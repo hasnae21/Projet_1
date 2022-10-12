@@ -9,16 +9,13 @@
         public function Store_Record()
         {
             global $db;
-            if(isset($_POST['btn_save']))
-            {
+            if(isset($_POST['btn_save'])){
                 $promo_name = $db->check($_POST['promo_name']);
 
-                if($this->insert_record($promo_name))
-                {
+                if($this->insert_record($promo_name)){
                     echo '<div class="alert alert-success"> Your Record Has Been Saved :) </div>';
                 }
-                else
-                {
+                else{
                     echo '<div class="alert alert-danger"> Failed ): </div>';
                 }
             }
@@ -31,12 +28,10 @@
             $query = "insert into promotion (name) values('$a')";
             $result = mysqli_query($db->connection,$query);
 
-            if($result)
-            {
+            if($result){
                 return true;
             }
-            else
-            {
+            else{
                 return false;
             }
         }
@@ -60,10 +55,9 @@
         }
     }
 
-?>    
-<?php 
+
         // Update Record
-        function update()
+        public function update()
         {
             global $db;
             
@@ -78,19 +72,20 @@
                 if($this->update_record($ID,$FirstName,$LastName,$UserName,$Email ))
                 {
                     $this->set_messsage('<div class="alert alert-success"> Your Record Has Been Updated : )</div>');
-              header("location:view.php");
-          }
+                header("location:view.php");
+                }
           else
           {   
               $this->set_messsage('<div class="alert alert-success"> Something Wrong : )</div>');
           }
           
           
+            }
         } 
     
         
         // Update Function 2
-        function update_record($id,$first,$Last,$User,$Email)
+        public function update_record($id,$first,$Last,$User,$Email)
         {
             global $db;
             $sql = "update employees set FirstName='$first', LastName='$Last', UserName='$User', Email='$Email' where ID='$id'";
