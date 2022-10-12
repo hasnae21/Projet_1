@@ -17,7 +17,7 @@
 <body>
     <?php $db->Store_Record(); ?>
 
-       <form method="POST">
+       <form method="POST" action="view.php">
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
             <input type="text" name="promo_name" required value="<?php echo $data['name']; ?>">
 

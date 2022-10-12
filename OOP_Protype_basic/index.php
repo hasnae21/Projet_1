@@ -18,13 +18,14 @@ $db = new operations();
 
             <?php $db->Store_Record(); ?>
 
-            <form method="post" autocomplete="off">
+            <form method="post" autocomplete="off" action="view.php">
                 <label> Promotion name:</label>
                 <input type="text" name="promo_name" required>
                 <button name="btn_save"> 
                     Envoyer
                 </button>
             </form>
+
         </div>
     </center>
 </body>

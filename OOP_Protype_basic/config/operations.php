@@ -54,9 +54,31 @@ class operations extends dbconfig
     }
 
 
-    // Update Record
-    public function update()
-    {
+
+
+
+
+
+// Set Session Message
+public function set_messsage($msg){
+
+    if (!empty($msg)) {
+        $_SESSION['Message'] = $msg;
+    } else {
+        $msg = "";
+    }
+}
+// Display Session Message
+public function display_message(){
+
+    if (isset($_SESSION['Message'])) {
+        echo $_SESSION['Message'];
+        unset($_SESSION['Message']);
+    }
+}
+
+// Update Record
+public function update(){
         global $db;
 
         if (isset($_POST['btn_update'])) {
@@ -64,19 +86,18 @@ class operations extends dbconfig
             $name = $db->check($_POST['name']);
 
             if ($this->update_record($id, $name)) {
-                $this->set_messsage('<div> Your Record Has Been Updated : )</div>');
-                header("location:view.php");
+                $this->set_messsage('<div> Your Record Has Been Updated :) </div>');
+                header("location:./view.php");
             } else {
-                $this->set_messsage('<div class="alert alert-success"> Something Wrong : )</div>');
+                $this->set_messsage('<div> Something Wrong ): </div>');
             }
         }
-    }
+}
 
-
-    // Update Function 2
-    public function update_record($id, $name)
-    {
+// Update Function 2
+public function update_record($id, $name){
         global $db;
+
         $sql = "update promotion set name='$name' where id='$id'";
         $result = mysqli_query($db->con, $sql);
         if ($result) {
@@ -84,24 +105,6 @@ class operations extends dbconfig
         } else {
             return false;
         }
-    }
+}
 
-    // Set Session Message
-    public function set_messsage($msg)
-    {
-        if (!empty($msg)) {
-            $_SESSION['Message'] = $msg;
-        } else {
-            $msg = "";
-        }
-    }
-
-    // Display Session Message
-    public function display_message()
-    {
-        if (isset($_SESSION['Message'])) {
-            echo $_SESSION['Message'];
-            unset($_SESSION['Message']);
-        }
-    }
 }
