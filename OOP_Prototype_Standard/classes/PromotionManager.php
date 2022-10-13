@@ -1,10 +1,12 @@
 <?php
 require_once('./classes/db.php');
+
 $db = new Connection();
 
 class Promotion extends Connection
 {
     public $msg;
+
     //////////////////////////////////////////////////////////Ajouter /C    
     function insert_record($r)
     {
@@ -19,6 +21,7 @@ class Promotion extends Connection
             return false;
         }
     }
+
     public function Store_Record()
     {
         global $db;
@@ -36,7 +39,6 @@ class Promotion extends Connection
         }
     }
 
-
     ///////////////////////////////////////////////////////Afficher /R
     public function view_record()
     {
@@ -48,7 +50,6 @@ class Promotion extends Connection
     }
 
     ///////////////////////////////////////////////////////Sélectionner
-    /////////////////////////////////////Get Particular ligne 
     public function get_record($id)
     {
         global $db;
@@ -57,7 +58,6 @@ class Promotion extends Connection
         $data = mysqli_query($db->con, $sql);
         return $data;
     }
-
 
     //////////////////////////////////////////////////////Modifier /U
     public function update_record($id, $name)
@@ -73,6 +73,7 @@ class Promotion extends Connection
             return false;
         }
     }
+
     public function update()
     {
         global $db;
@@ -90,7 +91,6 @@ class Promotion extends Connection
             }
         }
     }
-
 
     ///////////////////////////////////////////////////////Suprimer /D
     public function Delete_Record($id)
