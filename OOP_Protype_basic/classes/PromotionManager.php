@@ -25,9 +25,9 @@ class Promotion extends Connection
             $name = $db->check($_POST['promo_name']);
 
             if ($this->insert_record($name)) {
-                die(" Your Record Has Been Saved :)");
+                die(" la promotion est bien ajouter  :)");
             } else {
-                die("Failed   ):");
+                die("error ):");
             }
         }
     }

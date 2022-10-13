@@ -11,10 +11,10 @@ $promo= new Promotion();
 </head>
 <body>
     <center>
-        <h2>Add Promotion</h2>
+        <h2>Ajouter promotion</h2>
         
         <form method="post" autocomplete="off" >
-            <label> Promotion name:</label>
+            <label> Nom de la promotion :</label>
             <input type="text" name="promo_name" required>
             <button name="btn_save"> 
                 Envoyer
