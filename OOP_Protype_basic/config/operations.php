@@ -5,6 +5,7 @@ $db = new dbconfig();
 class operations extends dbconfig
 {
 
+    //////////////////////////////////////////////////////////Ajouter
     /////////////////////////////////// Insert Record in the Database
     public function Store_Record(){
 
@@ -21,7 +22,6 @@ class operations extends dbconfig
             }
         }
     }
-
     //////////////////////////////// Insert Record in the Database Using Query    
     function insert_record($r){
 
@@ -37,6 +37,8 @@ class operations extends dbconfig
         }
     }
 
+
+    ///////////////////////////////////////////////////////Afficher
     //////////////////////////////////View Database Record
     public function view_record(){
 
@@ -46,7 +48,6 @@ class operations extends dbconfig
         $result = mysqli_query($db->con, $query);
         return $result;
     }
-
     /////////////////////////////////////Get Particular Record
     public function get_record($id){
 
@@ -57,9 +58,11 @@ class operations extends dbconfig
         return $data;
     }
 
-    ///////////////////////////////////////// Delete Record
-    public function Delete_Record($id)
-    {
+
+    ///////////////////////////////////////////////////////Suprimer
+    ///////////////////////////////////////// delete Record using Query
+    public function Delete_Record($id){
+        
         global $db;
 
         $query = "delete from promotion where  id='$id'";
@@ -73,6 +76,7 @@ class operations extends dbconfig
         }
     }
     
+
     /////////////////////////////////////////// Update Record
     public function update(){
 
