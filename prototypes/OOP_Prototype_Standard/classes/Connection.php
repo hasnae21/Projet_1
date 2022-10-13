@@ -1,5 +1,5 @@
 <?php
-require_once('./classes/PromotionManager.php');
+require_once('PromotionManager.php');
 
 ///database name : projet_1 
 ///table name : promotion (id, name)
@@ -18,8 +18,8 @@ class Connection
             die(" echec de la connection au database  ):");
         }
     }
-    public function check($e){
-        $return = mysqli_real_escape_string($this->con, $e);
-        return $return;
-    }
+    // public function check($e){
+    //     $return = mysqli_real_escape_string($this->con, $e);
+    //     return $return;
+    // }
 }

@@ -1,13 +1,13 @@
 <?php
-require_once('./classes/Connection.php');
-
+require_once('Connection.php');
 $db = new Connection();
 
 class Promotion extends Connection
 {
+
     public $msg;
 
-    //////////////////////////////////////////////////////////Ajouter /C    
+    ////////////////////////////////////////////////////////Ajouter /C    
     function insert_record($r)
     {
         global $db;
@@ -21,20 +21,18 @@ class Promotion extends Connection
             return false;
         }
     }
-
     public function Store_Record()
     {
-        global $db;
 
         if (isset($_POST['btn_save'])) {
-            $name = $db->check($_POST['promo_name']);
+            $name = addslashes($_POST['promo_name']);
 
             if ($this->insert_record($name)) {
                 $msg = '<div> <p> Your Record Has Been Saved :)</p> </div> ';
-                header("location:./index.php?msg=" . $msg);
+                header("location:../index.php?msg=" . $msg);
             } else {
                 $msg = '<div> <p> Failed   ): </p> </div> ';
-                header("location:add.php?msg=" . $msg);
+                header("location:../includes/add.php?msg=" . $msg);
             }
         }
     }
@@ -73,21 +71,19 @@ class Promotion extends Connection
             return false;
         }
     }
-
     public function update()
     {
-        global $db;
 
         if (isset($_POST['btn_update'])) {
             $id = $_POST['id'];
-            $name = $db->check($_POST['promo_name']);
+            $name = addslashes($_POST['promo_name']);
 
             if ($this->update_record($id, $name)) {
                 $msg = '<div> <p> Your Record Has Been Updated :)</p> </div>';
-                header("location:./index.php?msg=" . $msg);
+                header("location:../index.php?msg=" . $msg);
             } else {
                 $msg = '<div> <p> Something is Wrong ): </p> </div>';
-                header("location:./index.php?msg=" . $msg);
+                header("location:../index.php?msg=" . $msg);
             }
         }
     }

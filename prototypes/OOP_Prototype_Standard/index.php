@@ -16,7 +16,7 @@ $result = $promo->view_record();
     <center>
         <h1>Promotions</h1>
         <div style="padding: 10px;">
-            <input type="button" onclick="location.href='./add.php';" value="Add Promotion" />
+            <input type="button" onclick="location.href='./includes/add.php';" value="Ajouter promotion" />
             <!-- add validation message -->
             <?= $_GET['msg'] ?? '' ?>
         </div>
@@ -30,10 +30,10 @@ $result = $promo->view_record();
                 <tr>
                     <td><?php echo $data['name'] ?></td>
                     <td>
-                        <a href="delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a>
+                        <a href="./includes/delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a>
                     </td>
                     <td>
-                        <a href="edit.php?id=<?php echo $data['id'] ?>"> Modifier</a>
+                        <a href="./includes/edit.php?id=<?php echo $data['id'] ?>"> Modifier</a>
                     </td>
                 </tr>
             <?php } ?>

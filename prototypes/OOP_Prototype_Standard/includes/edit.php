@@ -1,5 +1,5 @@
 <?php
-require('./classes/Connection.php');
+require('../classes/Connection.php');
 $promo = new Promotion();
 $id = $_GET['id'];
 $promo->update();
@@ -9,7 +9,6 @@ $data = mysqli_fetch_assoc($result);
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Modifier</title>
@@ -25,12 +24,12 @@ $data = mysqli_fetch_assoc($result);
         <form method="POST" autocomplete="off">
             <label> Nom de la promotion :</label>
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
-            <input type="text" name="promo_name" required value="<?php echo $data['name']; ?>">
+            <input type="text" name="promo_name" required value="<?php echo addslashes($data['name']); ?>">
             <button name="btn_update"> Envoyer </button>
         </form>
 
     </center>
-    <a href="index.php"><- Retour</a>
+    <a href="../index.php"><- Retour</a>
 </body>
 
 </html>

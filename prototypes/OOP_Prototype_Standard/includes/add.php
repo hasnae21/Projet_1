@@ -1,5 +1,5 @@
 <?php
-require_once('./classes/PromotionManager.php');
+require_once('../classes/PromotionManager.php');
 $promo = new Promotion();
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ $promo = new Promotion();
         </form>
 
     </center>
-    <a href="index.php"><- Retour</a>
+    <a href="../index.php"><- Retour</a>
 </body>
 
 </html>
