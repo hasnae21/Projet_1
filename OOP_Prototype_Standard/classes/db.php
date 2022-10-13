@@ -7,22 +7,17 @@ require_once('./classes/PromotionManager.php');
 class Connection
 {
     public $con;
-    public function __construct()
-    {
+    public function __construct(){
         $this->db_connect();
     }
-
-    public function db_connect()
-    {
+    public function db_connect(){
         $this->con = mysqli_connect('localhost', 'root', '', 'projet_1');
 
         if (mysqli_connect_error()) {
             die(" Database Connection Failed ):");
         }
     }
-
-    public function check($e)
-    {
+    public function check($e){
         $return = mysqli_real_escape_string($this->con, $e);
         return $return;
     }

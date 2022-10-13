@@ -16,9 +16,7 @@ $result = $promo->view_record();
     <center>
         <h1>Promotions :</h1>
         <div style="padding: 10px;">
-
             <input type="button" onclick="location.href='./add.php';" value="Add Promotion" />
-
             <!-- add validation message -->
             <?= $_GET['msg'] ?? '' ?>
         </div>
@@ -38,12 +36,9 @@ $result = $promo->view_record();
                         <a href="edit.php?id=<?php echo $data['id'] ?>"> Modifier</a>
                     </td>
                 </tr>
-            <?php
-            }
-            ?>
+            <?php } ?>
 
         </table>
-
     </center>
 </body>
 

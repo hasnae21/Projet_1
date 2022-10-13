@@ -1,14 +1,11 @@
 <?php
 require_once('./classes/db.php');
-
 $db = new Connection();
 
 class Promotion extends Connection
 {
     public $msg;
-
-    //////////////////////////////////////////////////////////Ajouter /C
-    //////////////////////////////// Insert in the Database Using Query    
+    //////////////////////////////////////////////////////////Ajouter /C    
     function insert_record($r)
     {
         global $db;
@@ -22,7 +19,6 @@ class Promotion extends Connection
             return false;
         }
     }
-    /////////////////////////////////// Insert in the Database
     public function Store_Record()
     {
         global $db;
@@ -40,8 +36,8 @@ class Promotion extends Connection
         }
     }
 
+
     ///////////////////////////////////////////////////////Afficher /R
-    //////////////////////////////////View Database Record
     public function view_record()
     {
         global $db;
@@ -62,8 +58,8 @@ class Promotion extends Connection
         return $data;
     }
 
+
     //////////////////////////////////////////////////////Modifier /U
-    /////////////////////////////////Update in the Database Using Query
     public function update_record($id, $name)
     {
         global $db;
@@ -77,7 +73,6 @@ class Promotion extends Connection
             return false;
         }
     }
-    /////////////////////////////////////////// Update function
     public function update()
     {
         global $db;
@@ -96,8 +91,8 @@ class Promotion extends Connection
         }
     }
 
+
     ///////////////////////////////////////////////////////Suprimer /D
-    ///////////////////////////////////////// delete function using Query
     public function Delete_Record($id)
     {
         global $db;

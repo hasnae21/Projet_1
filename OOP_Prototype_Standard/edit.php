@@ -1,7 +1,6 @@
 <?php
 require('./classes/db.php');
 $promo = new Promotion();
-
 $id = $_GET['id'];
 $promo->update();
 $result = $promo->get_record($id);
@@ -24,14 +23,10 @@ $data = mysqli_fetch_assoc($result);
         <?php $promo->Store_Record(); ?>
 
         <form method="POST" autocomplete="off">
-
             <label> Nom de la promotion :</label>
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
             <input type="text" name="promo_name" required value="<?php echo $data['name']; ?>">
-
-            <button name="btn_update">
-                Envoyer
-            </button>
+            <button name="btn_update"> Envoyer </button>
         </form>
 
     </center>

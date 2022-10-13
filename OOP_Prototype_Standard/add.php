@@ -8,30 +8,25 @@ $promo = new Promotion();
 
 <head>
     <meta charset="UTF-8">
-    <title>Projet_1</title>
+    <title>Ajouter</title>
 </head>
 
 <body>
     <center>
-        <h2> Ajouter promotion</h2>
-
-        <!-- store new data in database -->
-        <?php $promo->Store_Record(); ?>
+    <h2> Ajouter promotion</h2>
 
         <div style="color:blue;">
+            <!-- store new data in database -->
+            <?php $promo->Store_Record(); ?>
 
             <!-- add validation message -->
             <?= $_GET['msg'] ?? '' ?>
         </div>
 
         <form method="post" autocomplete="off">
-
             <label> Nom de la promotion :</label>
             <input type="text" name="promo_name" required>
-
-            <button name="btn_save">
-                Envoyer
-            </button>
+            <button name="btn_save"> Envoyer </button>
         </form>
 
     </center>

@@ -6,7 +6,7 @@ require_once('./classes/PromotionManager.php');
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Projet_1</title>
+    <title>Home</title>
 </head>
 <body>
     <center>
