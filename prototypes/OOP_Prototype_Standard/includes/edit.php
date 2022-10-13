@@ -24,7 +24,7 @@ $data = mysqli_fetch_assoc($result);
         <form method="POST" autocomplete="off">
             <label> Nom de la promotion :</label>
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
-            <input type="text" name="promo_name" required value="<?php echo addslashes($data['name']); ?>">
+            <input type="text" name="promo_name" required value="<?php echo $data['name']; ?>">
             <button name="btn_update"> Envoyer </button>
         </form>
 

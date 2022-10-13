@@ -10,7 +10,6 @@ class Connection
     public function __construct(){
         $this->db_connect();
     }
-    
     public function db_connect(){
         $this->con = mysqli_connect('localhost', 'root', '', 'projet_1');
 
@@ -18,8 +17,4 @@ class Connection
             die(" echec de la connection au database  ):");
         }
     }
-    // public function check($e){
-    //     $return = mysqli_real_escape_string($this->con, $e);
-    //     return $return;
-    // }
 }
