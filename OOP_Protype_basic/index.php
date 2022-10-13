@@ -1,5 +1,4 @@
 <?php
-
 require_once('./config/operations.php');
 $db = new operations();
 ?>
@@ -14,7 +13,6 @@ $db = new operations();
 <body>
     <center>
         <h2>Add Promotion</h2>
-        <div class="container">
 
             <?php $db->Store_Record(); ?>
 
@@ -25,8 +23,6 @@ $db = new operations();
                     Envoyer
                 </button>
             </form>
-
-        </div>
     </center>
 </body>
 </html>

@@ -14,11 +14,11 @@
         <div> 
             <?php $db->display_message(); ?> 
         </div>
-        <table class="table table-bordered">
+        <table>
         <tr>
-            <td style="width: 10%"> ID </td>
-            <td style="width: 10%"> Promotion Name </td>
-            <td style="width: 20" colspan="2">Operations</td>
+            <td > ID </td>
+            <td > Promotion Name </td>
+            <td >Operations</td>
         </tr>
 
             <?php  while($data = mysqli_fetch_assoc($result)){  ?>
@@ -26,8 +26,10 @@
 
             <td><?php echo $data['id']?></td>
             <td><?php echo $data['name'] ?></td>
-            <td><a href="edit.php?id=<?php echo $data['id'] ?>"> Edit </a></td>
-            <td><a href="del.php?id=<?php echo $data['id'] ?>"> Delet </a></td>
+            <td>
+            <a href="edit.php?id=<?php echo $data['id'] ?>"> Edit </a>
+            <a href="del.php?id=<?php echo $data['id'] ?>"> Delet </a>
+            </td>
         </tr>
             <?php } ?>
     </table>
