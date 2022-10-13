@@ -1,11 +1,12 @@
-<?php 
-    require_once('./classes/db.php');
-    $promo= new Promotion();
-    $result=$promo->view_record();
+<?php
+require_once('./classes/db.php');
+$promo = new Promotion();
+$result = $promo->view_record();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
@@ -13,38 +14,38 @@
 
 <body>
     <center>
-    <h1>Promotions :</h1> 
+        <h1>Promotions :</h1>
+        <div style="padding: 10px;">
 
-        <div>
             <input type="button" onclick="location.href='./add.php';" value="Add Promotion" />
-        </div>
-
-        <div style="color:blue;">
-
+            
             <!-- add validation message -->
             <?= $_GET['msg'] ?? '' ?>
-
         </div>
 
         <table border="1px;">
-        <tr>
-            <td> Nom de la promotion </td>
-            <td colspan="2"> Operations </td>
-        </tr>
+            <tr>
+                <td> Nom de la promotion </td>
+                <td colspan="2"> Operations </td>
+            </tr>
 
-            <?php while($data = mysqli_fetch_assoc($result)){  ?>
-        <tr>
-            <td><?php echo $data['name'] ?></td>
-            <td>
-                <a href="edit.php?id=<?php echo $data['id'] ?>"> Edit </a></td>
-            <td>
-                <a href="delete.php?id=<?php echo $data['id'] ?>"> Delet </a></td>
-        </tr>
-            <?php } ?>
+            <?php while ($data = mysqli_fetch_assoc($result)) {  ?>
+                <tr>
+                    <td><?php echo $data['name'] ?></td>
+                    <td>
+                        <a href="delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a>
+                    </td>
+                    <td>
+                        <a href="edit.php?id=<?php echo $data['id'] ?>"> Modifier</a>
+                    </td>
+                </tr>
+            <?php
+            }
+            ?>
 
         </table>
 
     </center>
-    
 </body>
+
 </html>
