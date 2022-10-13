@@ -12,6 +12,7 @@
 </head>
 <body>
         <div> 
+            <!-- add validation message -->
             <?php $db->display_message(); ?> 
         </div>
         <table>
@@ -20,7 +21,7 @@
             <td > Promotion Name </td>
             <td >Operations</td>
         </tr>
-
+            <!-- looping all data from database -->
             <?php  while($data = mysqli_fetch_assoc($result)){  ?>
         <tr>
 

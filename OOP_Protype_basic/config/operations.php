@@ -61,8 +61,10 @@ class operations extends dbconfig
     public function Delete_Record($id)
     {
         global $db;
+
         $query = "delete from promotion where  id='$id'";
         $result = mysqli_query($db->con,$query);
+
         if($result){
             return true;
         }
@@ -87,10 +89,12 @@ class operations extends dbconfig
                 header("location:./view.php");
             } 
             else {
-                $this->set_messsage('<div> Something Wrong ): </div>');
+                $this->set_messsage('<div> Something is Wrong ): </div>');
             }
         }
     }
+
+    /////////////////////////////////Update Record in the Database Using Query
     public function update_record($id, $name){
         global $db;
         
@@ -105,6 +109,7 @@ class operations extends dbconfig
         }
     }
     
+    
     ///////////////////////////////////////////////////////validation messages
     /////////////////////////////////////////////////////// Set Session Message
     public function set_messsage($msg){
@@ -115,6 +120,7 @@ class operations extends dbconfig
             $msg = "";
         }
     }
+
     ////////////////////////////////////////////////////// Display Session Message
     public function display_message(){
     

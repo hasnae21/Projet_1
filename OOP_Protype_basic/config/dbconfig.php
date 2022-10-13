@@ -2,6 +2,11 @@
 session_start();
 require_once('./config/operations.php');
 
+
+/////////////////////////////connection to database
+////////////////////////////database name : projet_1
+////////////////////////////table name : promotion 
+
 class dbconfig
 {
     public $con;
