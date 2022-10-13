@@ -1,5 +1,5 @@
 <?php
-require_once('./classes/functions.php');
+require_once('./classes/Promotion_Manager.php');
 $promo= new promotion();
 ?>
 
