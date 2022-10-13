@@ -30,6 +30,7 @@ $promo = new Promotion();
         </form>
 
     </center>
+    <a href="index.php"><- Retour</a>
 </body>
 
 </html>

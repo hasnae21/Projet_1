@@ -17,7 +17,7 @@ $data = mysqli_fetch_assoc($result);
 
 <body>
     <center>
-        <h2>Modifier Promotion</h2>
+    <h2>Modifier Promotion</h2>
 
         <!-- store updated data in database -->
         <?php $promo->Store_Record(); ?>
@@ -30,6 +30,7 @@ $data = mysqli_fetch_assoc($result);
         </form>
 
     </center>
+    <a href="index.php"><- Retour</a>
 </body>
 
 </html>
