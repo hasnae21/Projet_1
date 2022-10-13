@@ -1,6 +1,6 @@
 <?php 
     require_once('./classes/db.php');
-    $promo= new actions();
+    $promo= new promotion();
     $result=$promo->view_record();
 ?>
 

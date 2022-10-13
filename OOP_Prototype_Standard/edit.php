@@ -1,6 +1,6 @@
 <?php 
     require('./classes/db.php'); 
-    $promo= new actions();
+    $promo= new promotion();
 
     $id = $_GET['id'];
 

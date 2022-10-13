@@ -2,7 +2,7 @@
 require_once('./classes/db.php');
 $db = new dbs();
 
-class actions extends dbs
+class promotion extends dbs
 {
 
     public $msg;

@@ -1,6 +1,6 @@
 <?php
 require_once('./classes/functions.php');
-$promo= new actions();
+$promo= new promotion();
 ?>
 
 <!DOCTYPE html>
