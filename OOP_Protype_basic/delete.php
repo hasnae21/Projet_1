@@ -1,6 +1,6 @@
 <?php 
-    require_once('./config/dbconfig.php');
-    $db = new operations();
+    require_once('./classes/db.php');
+    $db = new actions();
     
     if(isset($_GET['id'])){
         global $db;
@@ -9,12 +9,12 @@
         if($db->Delete_Record($id)){
 
             $msg='<div> <p> Your Record Has Been deleted </p></div> ';
-            header("location:view.php?msg=" . $msg);
+            header("location:index.php?msg=" . $msg);
         }
         else{
 
             $msg='<div> <p> Something is Wrong ): </p></div> '; 
-            header("location:view.php?msg=" . $msg);
+            header("location:index.php?msg=" . $msg);
         }
     }
 ?>

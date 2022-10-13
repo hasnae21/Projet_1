@@ -1,37 +1,44 @@
-<?php
-require_once('./config/operations.php');
-$db = new operations();
+<?php 
+    require_once('./classes/db.php');
+    $db = new actions();
+    $result=$db->view_record();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Projet_1</title>
+    <title>Home</title>
 </head>
-
 <body>
     <center>
-        <h2>Add Promotion</h2>
+    <h1>Promotions :</h1> 
 
+        <div>
+            <input type="button" onclick="location.href='./add.php';" value="Add Promotion" />
+        </div>
         <div style="color:blue;">
-
             <!-- add validation message -->
             <?= $_GET['msg'] ?? '' ?>
         </div>
 
-        <!-- store new data in database -->
-            <?php $db->Store_Record(); ?>
+        <table border="1px;">
+        <tr>
+            <td> Promotion Name </td>
+            <td> Operations</td>
+        </tr>
 
-            <form method="post" autocomplete="off" >
+            <?php while($data = mysqli_fetch_assoc($result)){  ?>
+        <tr>
+            <td><?php echo $data['name'] ?></td>
+            <td>
+            <a href="edit.php?id=<?php echo $data['id'] ?>"> Edit </a>
+            <a href="delete.php?id=<?php echo $data['id'] ?>"> Delet </a>
+            </td>
+        </tr>
+            <?php } ?>
 
-                <label> Promotion name:</label>
-                <input type="text" name="promo_name" required>
-
-                <button name="btn_save"> 
-                    Envoyer
-                </button>
-            </form>
+        </table>
 
     </center>
 </body>

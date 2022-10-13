@@ -1,7 +1,6 @@
 <?php
 //session_start();
-require_once('./config/operations.php');
-
+require_once('./classes/functions.php');
 
 /////////////////////////////connection to database
 ////////////////////////////database name : projet_1
@@ -22,7 +21,6 @@ class dbconfig
             die(" Database Connection Failed ):");
         }
     }
-
     public function check($e){
         $return = mysqli_real_escape_string($this->con, $e);
         return $return;

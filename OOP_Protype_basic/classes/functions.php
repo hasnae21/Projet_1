@@ -1,8 +1,8 @@
 <?php
-require_once('./config/dbconfig.php');
+require_once('./classes/db.php');
 $db = new dbconfig();
 
-class operations extends dbconfig
+class actions extends dbconfig
 {
 
     public $msg;
@@ -34,11 +34,11 @@ class operations extends dbconfig
             if ($this->insert_record($name)) {
 
                 $msg='<div> <p> Your Record Has Been Saved :)</p> </div> ';
-                header("location:./view.php?msg=" . $msg);
+                header("location:./index.php?msg=" . $msg);
             } else {
 
                 $msg='<div> <p> Failed   ): </p> </div> ';
-                header("location:index.php?msg=" . $msg);
+                header("location:add.php?msg=" . $msg);
             }
         }
     }
@@ -116,12 +116,12 @@ class operations extends dbconfig
             if ($this->update_record($id, $name)) {
 
                 $msg = '<div> <p> Your Record Has Been Updated :)</p> </div>';
-                header("location:./view.php?msg=" . $msg);
+                header("location:./index.php?msg=" . $msg);
                 exit();
             } 
             else {
                 $msg='<div> <p> Something is Wrong ): </p> </div>';
-                header("location:./view.php?msg=" . $msg);
+                header("location:./index.php?msg=" . $msg);
                 exit();
             }
         }

@@ -1,6 +1,6 @@
 <?php 
-    require('./config/dbconfig.php'); 
-    $db = new operations();
+    require('./classes/db.php'); 
+    $db = new actions();
     $db->update();
     $id = $_GET['id'];
     $result = $db->get_record($id);
