@@ -15,7 +15,7 @@ class Connection
         $this->con = mysqli_connect('localhost', 'root', '', 'projet_1');
         
         if (mysqli_connect_error()) {
-            die(" Database Connection Failed ):");
+            die(" echec de la connection au database  ):");
         }
     }
     public function check($e){

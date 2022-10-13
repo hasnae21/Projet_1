@@ -1,12 +1,9 @@
 <?php
 require_once('./classes/db.php');
 $db = new Connection();
-
 class Promotion extends Connection
 {
-
     function insert_record($r){
-
         global $db;
         $query = "insert into promotion (name) values('$r')";
         $result = mysqli_query($db->con, $query);
@@ -17,13 +14,12 @@ class Promotion extends Connection
             return false;
         }
     }
+    
     public function Store_Record(){
-
         global $db;
         if (isset($_POST['btn_save'])) {
 
             $name = $db->check($_POST['promo_name']);
-
             if ($this->insert_record($name)) {
                 die(" la promotion est bien ajouter  :)");
             } else {
@@ -31,5 +27,4 @@ class Promotion extends Connection
             }
         }
     }
-    
 }
