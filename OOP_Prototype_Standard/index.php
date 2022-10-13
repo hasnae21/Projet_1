@@ -18,11 +18,10 @@ $result = $promo->view_record();
         <div style="padding: 10px;">
 
             <input type="button" onclick="location.href='./add.php';" value="Add Promotion" />
-            
+
             <!-- add validation message -->
             <?= $_GET['msg'] ?? '' ?>
         </div>
-
         <table border="1px;">
             <tr>
                 <td> Nom de la promotion </td>

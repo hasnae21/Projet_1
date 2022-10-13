@@ -21,7 +21,6 @@ class Promotion extends Connection
             return false;
         }
     }
-
     /////////////////////////////////// Insert in the Database
     public function Store_Record()
     {
@@ -111,4 +110,5 @@ class Promotion extends Connection
             }
         }
     }
+    
 }
