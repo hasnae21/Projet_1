@@ -122,5 +122,4 @@ class promotion extends dbs
         }
     }
     
-
 }
