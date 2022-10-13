@@ -11,6 +11,7 @@ class operations extends dbconfig
         global $db;
 
         if (isset($_POST['btn_save'])) {
+            
             $name = $db->check($_POST['promo_name']);
 
             if ($this->insert_record($name)) {

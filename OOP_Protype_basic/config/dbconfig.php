@@ -18,8 +18,8 @@ class dbconfig
         }
     }
 
-    public function check($a){
-        $return = mysqli_real_escape_string($this->con, $a);
+    public function check($e){
+        $return = mysqli_real_escape_string($this->con, $e);
         return $return;
     }
 }
