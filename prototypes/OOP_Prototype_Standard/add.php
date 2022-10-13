@@ -2,7 +2,6 @@
 require_once('./classes/PromotionManager.php');
 $promo = new Promotion();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
