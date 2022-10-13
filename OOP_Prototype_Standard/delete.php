@@ -1,5 +1,5 @@
 <?php
-require_once('./classes/db.php');
+require_once('./classes/Connection.php');
 $promo = new Promotion();
 
 if (isset($_GET['id'])) {
