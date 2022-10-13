@@ -1,5 +1,6 @@
 <?php
 require_once('./classes/db.php');
+
 $db = new Connection();
 class Promotion extends Connection
 {
@@ -14,7 +15,6 @@ class Promotion extends Connection
             return false;
         }
     }
-    
     public function Store_Record(){
         global $db;
         if (isset($_POST['btn_save'])) {

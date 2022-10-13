@@ -1,6 +1,5 @@
 <?php
 require_once('./classes/PromotionManager.php');
-$promo= new Promotion();
 ?>
 
 <!DOCTYPE html>
@@ -21,10 +20,11 @@ $promo= new Promotion();
             </button>
         </form>
 
-        <p>
-            <!-- store new data in database -->
-            <?php $promo->Store_Record(); ?>
-        </p>
+        <!-- store new data in database -->
+        <p><?php 
+            $promo= new Promotion();
+            $promo->Store_Record(); 
+        ?></p>
     </center>
 </body>
 </html>
