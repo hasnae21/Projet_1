@@ -17,4 +17,3 @@
             header("location:index.php?msg=" . $msg);
         }
     }
-?>
