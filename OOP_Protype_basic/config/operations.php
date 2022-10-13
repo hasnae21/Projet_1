@@ -11,7 +11,7 @@ class operations extends dbconfig
         global $db;
 
         if (isset($_POST['btn_save'])) {
-            
+
             $name = $db->check($_POST['promo_name']);
 
             if ($this->insert_record($name)) {
@@ -58,6 +58,24 @@ class operations extends dbconfig
 
 
 
+        // Delete Record
+        public function Delete_Record($id)
+        {
+            global $db;
+            $query = "delete from promotion where  id='$id'";
+            $result = mysqli_query($db->con,$query);
+            if($result)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+      
+
 
 
 
@@ -75,6 +93,7 @@ public function set_messsage($msg){
 public function display_message(){
 
     if (isset($_SESSION['Message'])) {
+
         echo $_SESSION['Message'];
         unset($_SESSION['Message']);
     }
