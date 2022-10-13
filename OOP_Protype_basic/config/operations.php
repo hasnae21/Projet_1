@@ -21,12 +21,13 @@ class operations extends dbconfig
             }
         }
     }
+
     // Insert Record in the Database Using Query    
-    function insert_record($a){
+    function insert_record($r){
 
         global $db;
 
-        $query = "insert into promotion (name) values('$a')";
+        $query = "insert into promotion (name) values('$r')";
         $result = mysqli_query($db->con, $query);
 
         if ($result) {
@@ -35,7 +36,6 @@ class operations extends dbconfig
             return false;
         }
     }
-
 
     //View Database Record
     public function view_record(){
