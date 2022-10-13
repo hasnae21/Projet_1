@@ -1,5 +1,5 @@
 <?php
-require_once('./classes/functions.php');
+require_once('./classes/Promotion_Manager.php');
 
 /////////////////////////////connection to database
 ////////////////////////////database name : projet_1 
