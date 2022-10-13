@@ -3,11 +3,9 @@ require('./classes/db.php');
 $promo = new Promotion();
 
 $id = $_GET['id'];
-
 $promo->update();
 $result = $promo->get_record($id);
 $data = mysqli_fetch_assoc($result);
-
 ?>
 
 <!DOCTYPE html>

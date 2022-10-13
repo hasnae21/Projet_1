@@ -34,9 +34,7 @@ $promo = new Promotion();
             </button>
         </form>
 
-
     </center>
-
 </body>
 
 </html>
