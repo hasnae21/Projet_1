@@ -32,6 +32,7 @@ class operations extends dbconfig
 
             if ($this->insert_record($name)) {
                 echo '<div> Your Record Has Been Saved   :) </div>';
+                header("location:./view.php");
             } else {
                 echo '<div> Failed   ): </div>';
             }
@@ -137,4 +138,5 @@ class operations extends dbconfig
             echo $_SESSION['Message'];
         }
     }
+
 }

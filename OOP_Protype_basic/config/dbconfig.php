@@ -5,7 +5,7 @@ require_once('./config/operations.php');
 
 /////////////////////////////connection to database
 ////////////////////////////database name : projet_1
-////////////////////////////table name : promotion 
+////////////////////////////table name : promotion (id, name)
 
 class dbconfig
 {

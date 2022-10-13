@@ -15,15 +15,23 @@
     <title>Modifier</title>
 </head>
 <body>
+    <center>
+        <h2>Update Promotion</h2>
 
-    <?php $db->Store_Record(); ?>
+        <!-- store updated data in database -->
+            <?php $db->Store_Record(); ?>
 
-    <form method="POST">
-        <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
-        <input type="text" name="promo_name" required value="<?php echo $data['name']; ?>">
+            <form method="POST" autocomplete="off">
 
-        <button name="btn_update"> Update </button>
-    </form>
+                <label> Promotion name:</label>
+                <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+                <input type="text" name="promo_name" required value="<?php echo $data['name']; ?>">
 
+                <button name="btn_update"> 
+                    Update 
+                </button>
+            </form>
+
+    </center>
 </body>
 </html>

@@ -14,15 +14,19 @@ $db = new operations();
     <center>
         <h2>Add Promotion</h2>
 
+        <!-- store new data in database -->
             <?php $db->Store_Record(); ?>
 
             <form method="post" autocomplete="off" >
+                
                 <label> Promotion name:</label>
                 <input type="text" name="promo_name" required>
+
                 <button name="btn_save"> 
                     Envoyer
                 </button>
             </form>
+
     </center>
 </body>
 </html>
