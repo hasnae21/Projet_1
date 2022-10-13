@@ -20,9 +20,8 @@
         </div>
 
         <div style="color:blue;">
-
             <!-- add validation message -->
-            <?= $_GET['error'] ?? '' ?>
+            <?= $_GET['msg'] ?? '' ?>
         </div>
 
         <table border="1px;">
@@ -41,7 +40,7 @@
         </tr>
             <?php } ?>
 
-    </table>
+        </table>
 
     </center>
 </body>

@@ -33,12 +33,12 @@ class operations extends dbconfig
 
             if ($this->insert_record($name)) {
 
-                $error='<div> <p> Your Record Has Been Saved :)</p> </div> ';
-                header("location:./view.php?error=" . $error);
+                $msg='<div> <p> Your Record Has Been Saved :)</p> </div> ';
+                header("location:./view.php?msg=" . $msg);
             } else {
 
-                $error='<div> <p> Failed   ): </p> </div> ';
-                header("location:index.php?error=" . $error);
+                $msg='<div> <p> Failed   ): </p> </div> ';
+                header("location:index.php?msg=" . $msg);
             }
         }
     }
@@ -115,13 +115,13 @@ class operations extends dbconfig
             
             if ($this->update_record($id, $name)) {
 
-                $error = '<div> <p> Your Record Has Been Updated :)</p> </div>';
-                header("location:./view.php?error=" . $error);
+                $msg = '<div> <p> Your Record Has Been Updated :)</p> </div>';
+                header("location:./view.php?msg=" . $msg);
                 exit();
             } 
             else {
-                $error='<div> <p> Something is Wrong ): </p> </div>';
-                header("location:./view.php?error=" . $error);
+                $msg='<div> <p> Something is Wrong ): </p> </div>';
+                header("location:./view.php?msg=" . $msg);
                 exit();
             }
         }

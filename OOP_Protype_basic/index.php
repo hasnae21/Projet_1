@@ -15,9 +15,9 @@ $db = new operations();
         <h2>Add Promotion</h2>
 
         <div style="color:blue;">
-        
+
             <!-- add validation message -->
-            <?= $_GET['error'] ?? '' ?>
+            <?= $_GET['msg'] ?? '' ?>
         </div>
 
         <!-- store new data in database -->
