@@ -8,12 +8,13 @@
 
         if($db->Delete_Record($id)){
 
-            $db->set_messsage('<p> Your Record Has Been deleted </p>');
-            header("location:view.php");
+            $error='<div> <p> Your Record Has Been deleted </p></div> ';
+            header("location:view.php?error=" . $error);
         }
         else{
 
-            $db->set_messsage('<p> Something is Wrong ): </p>'); 
+            $error='<div> <p> Something is Wrong ): </p></div> '; 
+            header("location:view.php?error=" . $error);
         }
     }
 ?>

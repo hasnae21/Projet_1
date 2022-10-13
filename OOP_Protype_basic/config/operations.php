@@ -5,6 +5,7 @@ $db = new dbconfig();
 class operations extends dbconfig
 {
 
+    public $msg;
 
     //////////////////////////////////////////////////////////Ajouter
     //////////////////////////////// Insert Record in the Database Using Query    
@@ -31,10 +32,13 @@ class operations extends dbconfig
             $name = $db->check($_POST['promo_name']);
 
             if ($this->insert_record($name)) {
-                echo '<div> Your Record Has Been Saved   :) </div>';
-                header("location:./view.php");
+
+                $error='<div> <p> Your Record Has Been Saved :)</p> </div> ';
+                header("location:./view.php?error=" . $error);
             } else {
-                echo '<div> Failed   ): </div>';
+
+                $error='<div> <p> Failed   ): </p> </div> ';
+                header("location:index.php?error=" . $error);
             }
         }
     }
@@ -111,32 +115,16 @@ class operations extends dbconfig
             
             if ($this->update_record($id, $name)) {
 
-                $this->set_messsage('<div> Your Record Has Been Updated :) </div>');
-                header("location:./view.php");
+                $error = '<div> <p> Your Record Has Been Updated :)</p> </div>';
+                header("location:./view.php?error=" . $error);
+                exit();
             } 
             else {
-                $this->set_messsage('<div> Something is Wrong ): </div>');
+                $error='<div> <p> Something is Wrong ): </p> </div>';
+                header("location:./view.php?error=" . $error);
+                exit();
             }
         }
     }
     
-    
-    ///////////////////////////////////////////////////////validation messages
-    /////////////////////////////////////////////////////// Set Session Message
-    public function set_messsage($msg){
-    
-        if (!empty($msg)) {
-            $_SESSION['Message'] = $msg;
-        } else {
-            $msg = "";
-        }
-    }
-    ///////////////////////////////////////////////////// Display Session Message
-    public function display_message(){
-    
-        if (isset($_SESSION['Message'])) {
-            echo $_SESSION['Message'];
-        }
-    }
-
 }

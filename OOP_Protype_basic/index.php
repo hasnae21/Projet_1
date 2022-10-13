@@ -14,11 +14,17 @@ $db = new operations();
     <center>
         <h2>Add Promotion</h2>
 
+        <div style="color:blue;">
+        
+            <!-- add validation message -->
+            <?= $_GET['error'] ?? '' ?>
+        </div>
+
         <!-- store new data in database -->
             <?php $db->Store_Record(); ?>
 
             <form method="post" autocomplete="off" >
-                
+
                 <label> Promotion name:</label>
                 <input type="text" name="promo_name" required>
 

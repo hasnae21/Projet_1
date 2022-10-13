@@ -12,10 +12,17 @@
 </head>
 <body>
     <center>
+    <h1>Promotions :</h1> 
+
+        <div>
+            <input type="button" onclick="location.href='./index.php';" value="Add Promotion" />
+            <input type="button" onclick="location.href='';" value="Rechercher" /> 
+        </div>
 
         <div style="color:blue;">
+
             <!-- add validation message -->
-            <?php $db->display_message(); ?>
+            <?= $_GET['error'] ?? '' ?>
         </div>
 
         <table border="1px;">
@@ -24,9 +31,7 @@
             <td >Operations</td>
         </tr>
 
-            <!-- looping all data from database -->
             <?php  while($data = mysqli_fetch_assoc($result)){  ?>
-
         <tr>
             <td><?php echo $data['name'] ?></td>
             <td>
@@ -34,7 +39,6 @@
             <a href="del.php?id=<?php echo $data['id'] ?>"> Delet </a>
             </td>
         </tr>
-
             <?php } ?>
 
     </table>
