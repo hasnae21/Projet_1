@@ -1,9 +1,9 @@
 <?php
 require_once('./classes/PromotionManager.php');
 
-
 ////////////////////////////database name : projet_1 
 ////////////////////////////table name : promotion (id, name)
+
 
 class Connection
 {
