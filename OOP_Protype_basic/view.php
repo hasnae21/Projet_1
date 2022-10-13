@@ -11,10 +11,10 @@
     <title>Home</title>
 </head>
 <body>
-        <div> 
+
             <!-- add validation message -->
-            <?php $db->display_message(); ?> 
-        </div>
+            <?php $db->display_message(); ?>
+
         <table>
         <tr>
             <td > ID </td>
@@ -35,5 +35,6 @@
             <?php } ?>
     </table>
 
+    
 </body>
 </html>

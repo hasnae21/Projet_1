@@ -9,7 +9,7 @@
         if($db->Delete_Record($id)){
 
             $db->set_messsage('<p> Your Record Has Been deleted </p>');
-            header("location:view.php");
+            //header("location:view.php");
         }
         else{
 

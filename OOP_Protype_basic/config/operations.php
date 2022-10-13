@@ -5,7 +5,22 @@ $db = new dbconfig();
 class operations extends dbconfig
 {
 
+
     //////////////////////////////////////////////////////////Ajouter
+    //////////////////////////////// Insert Record in the Database Using Query    
+    function insert_record($r){
+
+        global $db;
+
+        $query = "insert into promotion (name) values('$r')";
+        $result = mysqli_query($db->con, $query);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     /////////////////////////////////// Insert Record in the Database
     public function Store_Record(){
 
@@ -22,20 +37,6 @@ class operations extends dbconfig
             }
         }
     }
-    //////////////////////////////// Insert Record in the Database Using Query    
-    function insert_record($r){
-
-        global $db;
-
-        $query = "insert into promotion (name) values('$r')";
-        $result = mysqli_query($db->con, $query);
-
-        if ($result) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
 
     ///////////////////////////////////////////////////////Afficher
@@ -46,8 +47,12 @@ class operations extends dbconfig
 
         $query = "select * from promotion";
         $result = mysqli_query($db->con, $query);
+
         return $result;
     }
+
+
+    ///////////////////////////////////////////////////////Sélectionner
     /////////////////////////////////////Get Particular Record
     public function get_record($id){
 
@@ -55,6 +60,7 @@ class operations extends dbconfig
 
         $sql = "select * from promotion where id='$id'";
         $data = mysqli_query($db->con, $sql);
+
         return $data;
     }
 
@@ -62,7 +68,7 @@ class operations extends dbconfig
     ///////////////////////////////////////////////////////Suprimer
     ///////////////////////////////////////// delete Record using Query
     public function Delete_Record($id){
-        
+
         global $db;
 
         $query = "delete from promotion where  id='$id'";
@@ -75,8 +81,23 @@ class operations extends dbconfig
             return false;
         }
     }
-    
 
+
+    //////////////////////////////////////////////////////Modifier
+    /////////////////////////////////Update Record in the Database Using Query
+    public function update_record($id, $name){
+        global $db;
+        
+        $sql = "update promotion set name='$name' where id='$id'";
+        $result = mysqli_query($db->con, $sql);
+        
+        if ($result) {
+            return true;
+        } 
+        else {
+            return false;
+        }
+    }
     /////////////////////////////////////////// Update Record
     public function update(){
 
@@ -97,21 +118,6 @@ class operations extends dbconfig
             }
         }
     }
-
-    /////////////////////////////////Update Record in the Database Using Query
-    public function update_record($id, $name){
-        global $db;
-        
-        $sql = "update promotion set name='$name' where id='$id'";
-        $result = mysqli_query($db->con, $sql);
-        
-        if ($result) {
-            return true;
-        } 
-        else {
-            return false;
-        }
-    }
     
     
     ///////////////////////////////////////////////////////validation messages
@@ -124,15 +130,11 @@ class operations extends dbconfig
             $msg = "";
         }
     }
-
-    ////////////////////////////////////////////////////// Display Session Message
+    ///////////////////////////////////////////////////// Display Session Message
     public function display_message(){
     
         if (isset($_SESSION['Message'])) {
-    
             echo $_SESSION['Message'];
-            unset($_SESSION['Message']);
         }
     }
-    
 }
