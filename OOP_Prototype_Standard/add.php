@@ -1,6 +1,6 @@
 <?php
 require_once('./classes/PromotionManager.php');
-$promo= new promotion();
+$promo= new Promotion();
 ?>
 
 <!DOCTYPE html>
@@ -13,26 +13,26 @@ $promo= new promotion();
 <body>
     <center>
 
-        <h2>Add Promotion</h2>
-
+        <h2> Ajouter promotion</h2>
+        
+        <!-- store new data in database -->
+        <?php $promo->Store_Record(); ?>
+        
+        <form method="post" autocomplete="off" >
+            
+            <label> Nom de la promotion :</label>
+            <input type="text" name="promo_name" required>
+            
+            <button name="btn_save"> 
+                Envoyer
+            </button>
+        </form>
+        
         <div style="color:blue;">
 
             <!-- add validation message -->
             <?= $_GET['msg'] ?? '' ?>
         </div>
-
-        <!-- store new data in database -->
-            <?php $promo->Store_Record(); ?>
-
-            <form method="post" autocomplete="off" >
-
-                <label> Promotion name:</label>
-                <input type="text" name="promo_name" required>
-
-                <button name="btn_save"> 
-                    Envoyer
-                </button>
-            </form>
 
     </center>
 

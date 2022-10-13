@@ -1,6 +1,6 @@
 <?php 
     require_once('./classes/db.php');
-    $promo= new promotion();
+    $promo= new Promotion();
     
     if(isset($_GET['id'])){
         

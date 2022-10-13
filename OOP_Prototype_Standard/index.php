@@ -1,6 +1,6 @@
 <?php 
     require_once('./classes/db.php');
-    $promo= new promotion();
+    $promo= new Promotion();
     $result=$promo->view_record();
 ?>
 
@@ -28,17 +28,17 @@
 
         <table border="1px;">
         <tr>
-            <td> Promotion Name </td>
-            <td> Operations</td>
+            <td> Nom de la promotion </td>
+            <td> Operations </td>
         </tr>
 
             <?php while($data = mysqli_fetch_assoc($result)){  ?>
         <tr>
             <td><?php echo $data['name'] ?></td>
             <td>
-            <a href="edit.php?id=<?php echo $data['id'] ?>"> Edit </a>
-            <a href="delete.php?id=<?php echo $data['id'] ?>"> Delet </a>
-            </td>
+                <a href="edit.php?id=<?php echo $data['id'] ?>"> Edit </a></td>
+            <td>
+                <a href="delete.php?id=<?php echo $data['id'] ?>"> Delet </a></td>
         </tr>
             <?php } ?>
 
