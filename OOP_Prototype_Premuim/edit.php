@@ -1,5 +1,5 @@
 <?php
-require('./classes/db.php');
+require('./classes/Connection.php');
 $promo = new Promotion();
 $id = $_GET['id'];
 $promo->update();
