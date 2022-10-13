@@ -1,7 +1,7 @@
 <?php
 require_once('./classes/PromotionManager.php');
 
-/////////////////////////////connection to database
+
 ////////////////////////////database name : projet_1 
 ////////////////////////////table name : promotion (id, name)
 
