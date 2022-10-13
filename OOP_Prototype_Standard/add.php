@@ -12,11 +12,16 @@ $promo= new Promotion();
 
 <body>
     <center>
-
-        <h2> Ajouter promotion</h2>
+    <h2> Ajouter promotion</h2>
         
         <!-- store new data in database -->
         <?php $promo->Store_Record(); ?>
+        
+        <div style="color:blue;">
+
+            <!-- add validation message -->
+            <?= $_GET['msg'] ?? '' ?>
+        </div>
         
         <form method="post" autocomplete="off" >
             
@@ -28,11 +33,6 @@ $promo= new Promotion();
             </button>
         </form>
         
-        <div style="color:blue;">
-
-            <!-- add validation message -->
-            <?= $_GET['msg'] ?? '' ?>
-        </div>
 
     </center>
 

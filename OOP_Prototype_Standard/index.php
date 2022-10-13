@@ -29,7 +29,7 @@
         <table border="1px;">
         <tr>
             <td> Nom de la promotion </td>
-            <td> Operations </td>
+            <td colspan="2"> Operations </td>
         </tr>
 
             <?php while($data = mysqli_fetch_assoc($result)){  ?>
