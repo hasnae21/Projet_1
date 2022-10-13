@@ -5,10 +5,7 @@ $db = new Connection();
 class Promotion extends Connection
 {
 
-    public $msg;
-
-    function insert_record($r)
-    {
+    function insert_record($r){
 
         global $db;
         $query = "insert into promotion (name) values('$r')";
@@ -20,8 +17,7 @@ class Promotion extends Connection
             return false;
         }
     }
-    public function Store_Record()
-    {
+    public function Store_Record(){
 
         global $db;
         if (isset($_POST['btn_save'])) {
@@ -35,6 +31,5 @@ class Promotion extends Connection
             }
         }
     }
-
     
 }
