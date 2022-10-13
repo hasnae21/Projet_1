@@ -5,7 +5,7 @@ require_once('./classes/Promotion_Manager.php');
 ////////////////////////////database name : projet_1 
 ////////////////////////////table name : promotion (id, name)
 
-class dbs
+class Connection
 {
     public $con;
     public function __construct(){

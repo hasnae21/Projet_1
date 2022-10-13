@@ -1,8 +1,8 @@
 <?php
 require_once('./classes/db.php');
-$db = new dbs();
+$db = new Connection();
 
-class promotion extends dbs
+class promotion extends Connection
 {
 
     public $msg;
