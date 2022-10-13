@@ -1,14 +1,10 @@
 <?php
 require_once('./classes/PromotionManager.php');
 
-
 ////////////////////////////database name : projet_1 
 ////////////////////////////table name : promotion (id, name)
-
-
 class Connection
 {
-
     public $con;
     public function __construct(){
         $this->db_connect();
@@ -26,5 +22,4 @@ class Connection
         $return = mysqli_real_escape_string($this->con, $e);
         return $return;
     }
-
 }
