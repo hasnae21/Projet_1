@@ -1,19 +1,16 @@
 <?php
-//session_start();
 require_once('./classes/functions.php');
 
 /////////////////////////////connection to database
-////////////////////////////database name : projet_1
+////////////////////////////database name : projet_1 
 ////////////////////////////table name : promotion (id, name)
 
-class dbconfig
+class dbs
 {
     public $con;
-
     public function __construct(){
         $this->db_connect();
     }
-
     public function db_connect(){
         $this->con = mysqli_connect('localhost', 'root', '', 'projet_1');
         

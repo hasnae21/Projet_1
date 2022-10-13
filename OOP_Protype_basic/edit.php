@@ -1,10 +1,13 @@
 <?php 
     require('./classes/db.php'); 
-    $db = new actions();
-    $db->update();
+    $promo= new actions();
+
     $id = $_GET['id'];
-    $result = $db->get_record($id);
+
+    $promo->update();
+    $result = $promo->get_record($id);
     $data = mysqli_fetch_assoc($result);
+    
 ?>
 
 <!DOCTYPE html>
@@ -13,12 +16,13 @@
     <meta charset="UTF-8">
     <title>Modifier</title>
 </head>
+
 <body>
     <center>
         <h2>Update Promotion</h2>
 
         <!-- store updated data in database -->
-            <?php $db->Store_Record(); ?>
+            <?php $promo->Store_Record(); ?>
 
             <form method="POST" autocomplete="off">
 

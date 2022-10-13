@@ -1,14 +1,14 @@
 <?php
 require_once('./classes/db.php');
-$db = new dbconfig();
+$db = new dbs();
 
-class actions extends dbconfig
+class actions extends dbs
 {
 
     public $msg;
 
     //////////////////////////////////////////////////////////Ajouter
-    //////////////////////////////// Insert Record in the Database Using Query    
+    //////////////////////////////// Insert in the Database Using Query    
     function insert_record($r){
 
         global $db;
@@ -22,7 +22,7 @@ class actions extends dbconfig
             return false;
         }
     }
-    /////////////////////////////////// Insert Record in the Database
+    /////////////////////////////////// Insert in the Database
     public function Store_Record(){
 
         global $db;
@@ -43,7 +43,6 @@ class actions extends dbconfig
         }
     }
 
-
     ///////////////////////////////////////////////////////Afficher
     //////////////////////////////////View Database Record
     public function view_record(){
@@ -56,7 +55,6 @@ class actions extends dbconfig
         return $result;
     }
 
-
     ///////////////////////////////////////////////////////Sélectionner
     /////////////////////////////////////Get Particular Record
     public function get_record($id){
@@ -68,7 +66,6 @@ class actions extends dbconfig
 
         return $data;
     }
-
 
     ///////////////////////////////////////////////////////Suprimer
     ///////////////////////////////////////// delete Record using Query
@@ -86,7 +83,6 @@ class actions extends dbconfig
             return false;
         }
     }
-
 
     //////////////////////////////////////////////////////Modifier
     /////////////////////////////////Update Record in the Database Using Query
@@ -117,14 +113,14 @@ class actions extends dbconfig
 
                 $msg = '<div> <p> Your Record Has Been Updated :)</p> </div>';
                 header("location:./index.php?msg=" . $msg);
-                exit();
             } 
             else {
                 $msg='<div> <p> Something is Wrong ): </p> </div>';
                 header("location:./index.php?msg=" . $msg);
-                exit();
+
             }
         }
     }
     
+
 }

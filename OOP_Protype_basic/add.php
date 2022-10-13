@@ -1,6 +1,6 @@
 <?php
 require_once('./classes/functions.php');
-$db = new actions();
+$promo= new actions();
 ?>
 
 <!DOCTYPE html>
@@ -9,8 +9,10 @@ $db = new actions();
     <meta charset="UTF-8">
     <title>Projet_1</title>
 </head>
+
 <body>
     <center>
+
         <h2>Add Promotion</h2>
 
         <div style="color:blue;">
@@ -20,7 +22,7 @@ $db = new actions();
         </div>
 
         <!-- store new data in database -->
-            <?php $db->Store_Record(); ?>
+            <?php $promo->Store_Record(); ?>
 
             <form method="post" autocomplete="off" >
 
@@ -33,5 +35,6 @@ $db = new actions();
             </form>
 
     </center>
+
 </body>
 </html>
