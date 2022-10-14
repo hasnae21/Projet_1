@@ -5,7 +5,6 @@ $db = new Connection();
 
 class Promotion extends Connection
 {
-
     public $msg;
 
     ////////////////////////////////////////////////////////Ajouter /C    
@@ -103,8 +102,14 @@ class Promotion extends Connection
     }
 
     ////////////////////////////////////////////////////////Rechercher /S
-    // public function Search_Record()
-    // {
-    // }
+    public function Search_Record($s)
+    {
+        global $db;
 
+        $sql = "
+        SELECT * FROM promotion WHERE name LIKE '%" . $s . "%' OR id LIKE '%" . $s . "%' 
+        ";
+        $result = mysqli_query($db->con, $sql);
+        return $result;
+    }
 }

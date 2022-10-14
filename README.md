@@ -4,3 +4,19 @@ Le centre SOLICODE est doté des moyens pédagogiques et techniques innovants fa
 Dans le but de simplifier la gestion de la formation par projets aux formateurs de Solicode. Votre mission est de créer une application CRUD fullstack à base de PHP et Mysql qui permet la manipulation des promotions dans Solicode
 
 
+        //var_dump(mysqli_fetch_object($result));
+        // exit();
+
+                    if (mysqli_num_rows($result) > 0) {
+                echo 'Data Found';
+                //         $output .= '<div>';
+
+                //         while ($row = mysqli_fetch_array($result)) {
+                //             $output .= '
+                // 	<p>' . $row["name"] . '</p>
+                // ';
+                //         }
+                //         echo $output;
+            } else {
+                echo 'Data Not Found';
+            }

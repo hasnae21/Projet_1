@@ -1,37 +1,32 @@
 <?php
 
 // $connect = mysqli_connect("localhost", "root", "", "projet_1");
+// $output = '';
 
-require_once('Connection.php');
+// if (isset($_POST["query"])) {
+// 	$search = $_POST["query"];  //what we are searching for
 
-$db = new Connection();
-$output = '';
+// 	$query = "
+// 	SELECT * FROM promotion 
+// 	WHERE name LIKE '%" . $search . "%'
+// 	OR id LIKE '%" . $search . "%' 
+// 	";
+// 	$result = mysqli_query($connect, $query);
 
-global $db;
+// 	if (mysqli_num_rows($result) > 0) {
 
-if (isset($_POST["query"])) {
-	$search = $_POST["query"];
+// 		$output .= '<div>';
 
-	$query = "
-	SELECT * FROM promotion 
-	WHERE name LIKE '%" . $search . "%'
-	OR id LIKE '%" . $search . "%' 
-	";
+// 		while ($row = mysqli_fetch_array($result)) {
 
-	$result = mysqli_query($db->con, $query);
-	// $result = mysqli_query($connect, $query);
+// 			$output .= '
+// 			<p>' . $row["name"] . '</p>
+// 			';
+// 		}
 
-	if (mysqli_num_rows($result) > 0) {
-		$output .= '<div>';
-		// var_dump(mysqli_fetch_object($result));
-		// exit();
-		while ($row = mysqli_fetch_array($result)) {
-			$output .= '
-			<p>' . $row["name"] . '</p>
-		';
-		}
-		echo $output;
-	} else {
-		echo 'Data Not Found';
-	}
-}
+// 		echo $output;
+// 	}
+// 	else {
+// 		echo 'Data Not Found';
+// 	}
+// }

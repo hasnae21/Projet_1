@@ -2,6 +2,7 @@
 require_once('./classes/Connection.php');
 
 $promo = new Promotion();
+
 $result = $promo->view_record();
 ?>
 
@@ -14,13 +15,12 @@ $result = $promo->view_record();
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script>
-
         $(document).ready(function() {
             load_data();
 
             function load_data(query) {
                 $.ajax({
-                    url: "./includes/search.php",
+                    url: "index.php",
                     method: "post",
                     data: {
                         query: query
@@ -39,7 +39,6 @@ $result = $promo->view_record();
                 }
             });
         });
-
     </script>
 </head>
 
@@ -48,6 +47,7 @@ $result = $promo->view_record();
         <h1>Promotions</h1>
 
         <div style="padding: 10px;">
+
             <input type="button" onclick="location.href='./includes/add.php';" value="Ajouter une promotion" />
             <input type="text" name="search_text" id="search_text" placeholder="Rechercher une promotion" />
 
@@ -64,16 +64,36 @@ $result = $promo->view_record();
                 <td colspan="2"> Operations </td>
             </tr>
 
-            <?php while ($data = mysqli_fetch_assoc($result)) {  ?>
-                <tr>
-                    <td><?php echo $data['name'] ?></td>
+            <?php
+            while ($data = mysqli_fetch_assoc($result)) {
 
-                    <td><a href="./includes/delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a></td>
-                    <td><a href="./includes/edit.php?id=<?php echo $data['id'] ?>"> Modifier</a></td>
-                </tr>
-            <?php } ?>
+                /////////////////////filter action
+
+                if (isset($_POST["query"])) {
+
+                    $search = $_POST["query"];                    ///what we are searching for
+                    $searched = $promo->Search_Record($search);   ///what we found
+
+                    if (mysqli_num_rows($searched) > 0) {
+                        while ($data = mysqli_fetch_assoc($searched)) {
+            ?>
+                            <tr>
+                                <td><?php echo $data['id'] ?></td>
+                                <td><?php echo $data['name'] ?></td>
+                                <td><a href="./includes/delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a></td>
+                                <td><a href="./includes/edit.php?id=<?php echo $data['id'] ?>"> Modifier</a></td>
+                            </tr>
+            <?php       
+                        }
+                    } else {
+                        echo 'Data Not Found';
+                    }
+                }
+            }
+            ?>
 
         </table>
+
     </center>
 </body>
 
