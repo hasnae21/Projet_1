@@ -6,7 +6,6 @@
 	<input type="text" name="search_text" id="search_text" />
 
 	<div id="result"></div>
-	<div style="clear:both"></div>
 </center> 
 
 
