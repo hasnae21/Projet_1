@@ -1,32 +1,56 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-// $connect = mysqli_connect("localhost", "root", "", "projet_1");
-// $output = '';
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
 
-// if (isset($_POST["query"])) {
-// 	$search = $_POST["query"];  //what we are searching for
+<body>
+	<center>
+		
+		<table border="1px;">
 
-// 	$query = "
-// 	SELECT * FROM promotion 
-// 	WHERE name LIKE '%" . $search . "%'
-// 	OR id LIKE '%" . $search . "%' 
-// 	";
-// 	$result = mysqli_query($connect, $query);
+			<?php
+			require('../classes/Connection.php');
+			$promo = new Promotion();
+			/////////////////////filter action
 
-// 	if (mysqli_num_rows($result) > 0) {
+			if (isset($_POST["query"])) {
+				$search = $_POST["query"];                    ///what we are searching for
+				$searched = $promo->Search_Record($search);   ///what we found
 
-// 		$output .= '<div>';
+				if (mysqli_num_rows($searched) > 0) {
+			?>
+				<tr>
+					<td> ID de la promotion </td>
+					<td> Nom de la promotion </td>
+					<td colspan="2"> Operations </td>
+				</tr>
 
-// 		while ($row = mysqli_fetch_array($result)) {
+				<?php
+					while ($filter = mysqli_fetch_assoc($searched)) {
+				?>
+						<tr>
+							<td><?php echo $filter['id'] ?></td>
+							<td><?php echo $filter['name'] ?></td>
+							<td><a href="./includes/delete.php?id=<?php echo $filter['id'] ?>"> Supprimer </a></td>
+							<td><a href="./includes/edit.php?id=<?php echo $filter['id'] ?>"> Modifier</a></td>
+						</tr>
 
-// 			$output .= '
-// 			<p>' . $row["name"] . '</p>
-// 			';
-// 		}
+			<?php
+					}
+				} else {
+					echo 'Data Not Found';
+				}
+			}
+			?>
 
-// 		echo $output;
-// 	}
-// 	else {
-// 		echo 'Data Not Found';
-// 	}
-// }
+		</table>
+
+	</center>
+</body>
+
+</html>

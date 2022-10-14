@@ -7,16 +7,33 @@ Dans le but de simplifier la gestion de la formation par projets aux formateurs 
         //var_dump(mysqli_fetch_object($result));
         // exit();
 
-                    if (mysqli_num_rows($result) > 0) {
-                echo 'Data Found';
-                //         $output .= '<div>';
+// $connect = mysqli_connect("localhost", "root", "", "projet_1");
+// $output = '';
 
-                //         while ($row = mysqli_fetch_array($result)) {
-                //             $output .= '
-                // 	<p>' . $row["name"] . '</p>
-                // ';
-                //         }
-                //         echo $output;
-            } else {
-                echo 'Data Not Found';
-            }
+// if (isset($_POST["query"])) {
+// 	$search = $_POST["query"];  //what we are searching for
+
+// 	$query = "
+// 	SELECT * FROM promotion 
+// 	WHERE name LIKE '%" . $search . "%'
+// 	OR id LIKE '%" . $search . "%' 
+// 	";
+// 	$result = mysqli_query($connect, $query);
+
+// 	if (mysqli_num_rows($result) > 0) {
+
+// 		$output .= '<div>';
+
+// 		while ($row = mysqli_fetch_array($result)) {
+
+// 			$output .= '
+// 			<p>' . $row["name"] . '</p>
+// 			';
+// 		}
+
+// 		echo $output;
+// 	}
+// 	else {
+// 		echo 'Data Not Found';
+// 	}
+// }
