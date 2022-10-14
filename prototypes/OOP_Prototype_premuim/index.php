@@ -22,10 +22,12 @@ $result = $promo->view_record();
             <input type="text" name="search_text" id="search_text" placeholder="Rechercher une promotion" />
 
             <div id="result"></div>
-        </div>
 
-        <!-- add validation message -->
-        <?= $_GET['msg'] ?? '' ?>
+
+            <!-- add validation message -->
+            <?= $_GET['msg'] ?? '' ?>
+
+        </div>
 
         <table border="1px;">
             <tr>
@@ -51,29 +53,29 @@ $result = $promo->view_record();
 
 </html>
 <script>
-	$(document).ready(function() {
-		load_data();
+    $(document).ready(function() {
+        load_data();
 
-		function load_data(query) {
-			$.ajax({
-				url: "./includes/fetch.php",
-				method: "post",
-				data: {
-					query: query
-				},
-				success: function(data) {
-					$('#result').html(data);
-				}
-			});
-		}
+        function load_data(query) {
+            $.ajax({
+                url: "./includes/fetch.php",
+                method: "post",
+                data: {
+                    query: query
+                },
+                success: function(data) {
+                    $('#result').html(data);
+                }
+            });
+        }
 
-		$('#search_text').keyup(function() {
-			var search = $(this).val();
-			if (search != '') {
-				load_data(search);
-			} else {
-				load_data();
-			}
-		});
-	});
+        $('#search_text').keyup(function() {
+            var search = $(this).val();
+            if (search != '') {
+                load_data(search);
+            } else {
+                load_data();
+            }
+        });
+    });
 </script>
