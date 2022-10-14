@@ -4,6 +4,7 @@ $output = '';
 
 if (isset($_POST["query"])) {
 	$search = mysqli_real_escape_string($connect, $_POST["query"]);
+
 	$query = "
 	SELECT * FROM promotion 
 	WHERE name LIKE '%" . $search . "%'
@@ -14,15 +15,15 @@ if (isset($_POST["query"])) {
 
 	if (mysqli_num_rows($result) > 0) {
 		$output .= '<div>';
+		// var_dump(mysqli_fetch_object($result));
+		// exit();
 		while ($row = mysqli_fetch_array($result)) {
 			$output .= '
 		<p>' . $row["name"] . '</p>
 		';
 		}
-
 		echo $output;
-	} 
-	else {
+	} else {
 		echo 'Data Not Found';
 	}
 }

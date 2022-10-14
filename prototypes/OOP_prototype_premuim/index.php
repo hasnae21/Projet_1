@@ -23,7 +23,6 @@ $result = $promo->view_record();
 
             <div id="result"></div>
 
-
             <!-- add validation message -->
             <?= $_GET['msg'] ?? '' ?>
 
