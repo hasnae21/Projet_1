@@ -32,7 +32,7 @@ $result = $promo->view_record();
 
         </div>
 
-        <table border="1px;">
+        <!-- <table border="1px;">
         <?php
             if (mysqli_num_rows($result) > 0) {
         ?>
@@ -62,7 +62,7 @@ $result = $promo->view_record();
 
             ?>
 
-        </table>
+        </table> -->
 
     </center>
 </body>
