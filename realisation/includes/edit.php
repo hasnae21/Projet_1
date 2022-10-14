@@ -1,6 +1,6 @@
 <?php
 require('../classes/Connection.php');
-$promo = new Promotion();
+$promo = new PromotionManager();
 
 $id = $_GET['id'];
 $promo->update();
@@ -14,6 +14,7 @@ $data = mysqli_fetch_assoc($result);
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Modifier</title>
 </head>
 

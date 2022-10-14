@@ -1,7 +1,7 @@
 <?php
 require_once('./classes/Connection.php');
 
-$promo = new Promotion();
+$promo = new PromotionManager();
 
 $result = $promo->view_record();
 ?>
@@ -46,8 +46,12 @@ $result = $promo->view_record();
                     <tr>
                         <td><?php echo $data['id'] ?></td>
                         <td><?php echo $data['name'] ?></td>
-                        <td><a href="./includes/delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a></td>
-                        <td><a href="./includes/edit.php?id=<?php echo $data['id'] ?>"> Modifier</a></td>
+                        <td>
+                            <a href="./includes/delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a>
+                        </td>
+                        <td>
+                            <a href="./includes/edit.php?id=<?php echo $data['id'] ?>"> Modifier</a>
+                        </td>
                     </tr>
             <?php
                 }

@@ -11,18 +11,21 @@
 <body>
 	<center>
 		
-		<table border="1px;">
+
 
 			<?php
 			require('../classes/Connection.php');
-			$promo = new Promotion();
+			$promo = new PromotionManager();
+
 			/////////////////////filter action
 
 			if (isset($_POST["query"])) {
+
 				$search = $_POST["query"];                    ///what we are searching for
 				$searched = $promo->Search_Record($search);   ///what we found
 
 				if (mysqli_num_rows($searched) > 0) {
+					header("location:../index.php");
 			?>
 				<tr>
 					<td> ID de la promotion </td>
@@ -31,7 +34,7 @@
 				</tr>
 
 				<?php
-					while ($filter = mysqli_fetch_assoc($searched)) {
+					// while ($filter = mysqli_fetch_assoc($searched)) {
 				?>
 						<tr>
 							<td><?php echo $filter['id'] ?></td>
@@ -48,7 +51,6 @@
 			}
 			?>
 
-		</table>
 
 	</center>
 </body>

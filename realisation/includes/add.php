@@ -1,12 +1,13 @@
 <?php
 require_once('../classes/PromotionManager.php');
-$promo = new Promotion();
+$promo = new PromotionManager();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Ajouter</title>
 </head>
 
