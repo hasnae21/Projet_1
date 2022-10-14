@@ -11,6 +11,7 @@ $result = $promo->view_record();
     <meta charset="UTF-8">
     <title>Home</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -51,6 +52,7 @@ $result = $promo->view_record();
 </body>
 
 </html>
+
 <script>
     $(document).ready(function() {
         load_data();

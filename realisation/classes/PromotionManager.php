@@ -1,5 +1,6 @@
 <?php
 require_once('Connection.php');
+
 $db = new Connection();
 
 class Promotion extends Connection
@@ -24,7 +25,7 @@ class Promotion extends Connection
     public function Store_Record()
     {
         if (isset($_POST['btn_save'])) {
-            $name = addslashes($_POST['promo_name']);
+            $name = $_POST['promo_name'];
 
             if ($this->insert_record($name)) {
                 $msg = '<div> <p> Your Record Has Been Saved :)</p> </div> ';
@@ -57,7 +58,7 @@ class Promotion extends Connection
     }
 
     //////////////////////////////////////////////////////Modifier /U
-    public function update_record($id, $name)
+    function update_record($id, $name)
     {
         global $db;
 
@@ -74,7 +75,7 @@ class Promotion extends Connection
     {
         if (isset($_POST['btn_update'])) {
             $id = $_POST['id'];
-            $name = addslashes($_POST['promo_name']);
+            $name = $_POST['promo_name'];
 
             if ($this->update_record($id, $name)) {
                 $msg = '<div> <p> Your Record Has Been Updated :)</p> </div>';
@@ -99,5 +100,13 @@ class Promotion extends Connection
         } else {
             return false;
         }
+    }
+
+    ////////////////////////////////////////////////////////Rechercher /S
+    public function Search_Record()
+    {
+
+    
+
     }
 }
