@@ -23,7 +23,6 @@ class Promotion extends Connection
     }
     public function Store_Record()
     {
-
         if (isset($_POST['btn_save'])) {
             $name = addslashes($_POST['promo_name']);
 
@@ -73,7 +72,6 @@ class Promotion extends Connection
     }
     public function update()
     {
-
         if (isset($_POST['btn_update'])) {
             $id = $_POST['id'];
             $name = addslashes($_POST['promo_name']);
