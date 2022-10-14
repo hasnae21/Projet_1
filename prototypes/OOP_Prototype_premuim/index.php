@@ -15,11 +15,16 @@ $result = $promo->view_record();
 <body>
     <center>
         <h1>Promotions</h1>
+
         <div style="padding: 10px;">
-            <input type="button" onclick="location.href='./includes/add.php';" value="Ajouter promotion" />
+            <input type="button" onclick="location.href='./includes/add.php';" value="Ajouter une promotion" />
+            <input type="button" onclick="location.href='./includes/index.php';" value="Rechercher une promotion" />
+
             <!-- add validation message -->
             <?= $_GET['msg'] ?? '' ?>
+
         </div>
+
         <table border="1px;">
             <tr>
                 <td> Nom de la promotion </td>
