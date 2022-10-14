@@ -41,6 +41,7 @@ $result = $promo->view_record();
 
             <?php
 
+                if (mysqli_num_rows($result) > 0) {
                 while ($data = mysqli_fetch_assoc($result)) {
                     ?>
                     <tr>
@@ -54,7 +55,11 @@ $result = $promo->view_record();
                         </td>
                     </tr>
             <?php
+            }
                 }
+            // else {
+            //     header("location:./includes/search.php");
+            // }
             ?>
 
         </table>

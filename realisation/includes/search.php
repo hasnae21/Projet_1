@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Home</title>
+	<title></title>
 	<link rel="stylesheet" href="./css/style.css">
 	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
@@ -11,7 +11,7 @@
 <body>
 	<center>
 		
-
+	<table border="1px;">
 
 			<?php
 			require('../classes/Connection.php');
@@ -25,7 +25,6 @@
 				$searched = $promo->Search_Record($search);   ///what we found
 
 				if (mysqli_num_rows($searched) > 0) {
-					header("location:../index.php");
 			?>
 				<tr>
 					<td> ID de la promotion </td>
@@ -34,7 +33,7 @@
 				</tr>
 
 				<?php
-					// while ($filter = mysqli_fetch_assoc($searched)) {
+					while ($filter = mysqli_fetch_assoc($searched)) {
 				?>
 						<tr>
 							<td><?php echo $filter['id'] ?></td>
@@ -44,6 +43,7 @@
 						</tr>
 
 			<?php
+
 					}
 				} else {
 					echo 'Data Not Found';
@@ -51,7 +51,7 @@
 			}
 			?>
 
-
+</table>
 	</center>
 </body>
 
