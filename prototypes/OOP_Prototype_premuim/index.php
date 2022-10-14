@@ -22,9 +22,8 @@ $result = $promo->view_record();
             <input type="text" name="search_text" id="search_text" placeholder="Rechercher une promotion" />
 
             <div id="result"></div>
-            <!-- <div style="clear:both"></div> -->
-
         </div>
+
         <!-- add validation message -->
         <?= $_GET['msg'] ?? '' ?>
 
