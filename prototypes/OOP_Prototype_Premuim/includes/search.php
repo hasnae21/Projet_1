@@ -16,14 +16,13 @@ if (isset($_POST["query"])) {
 		$output .= '<div>';
 		while ($row = mysqli_fetch_array($result)) {
 			$output .= '
-
 		<p>' . $row["name"] . '</p>
-
-			';
+		';
 		}
 
 		echo $output;
-	} else {
+	} 
+	else {
 		echo 'Data Not Found';
 	}
 }

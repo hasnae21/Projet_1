@@ -58,7 +58,7 @@ $result = $promo->view_record();
 
         function load_data(query) {
             $.ajax({
-                url: "./includes/fetch.php",
+                url: "./includes/search.php",
                 method: "post",
                 data: {
                     query: query
