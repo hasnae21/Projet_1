@@ -1,5 +1,6 @@
 <?php
 require_once('./classes/Connection.php');
+
 $promo = new Promotion();
 $result = $promo->view_record();
 ?>
@@ -10,8 +11,36 @@ $result = $promo->view_record();
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function() {
+            load_data();
+
+            function load_data(query) {
+                $.ajax({
+                    url: "./includes/search.php",
+                    method: "post",
+                    data: {
+                        query: query
+                    },
+                    success: function(data) {
+                        $('#result').html(data);
+                    }
+                });
+            }
+            $('#search_text').keyup(function() {
+                var search = $(this).val();
+                if (search != '') {
+                    load_data(search);
+                } else {
+                    load_data();
+                }
+            });
+        });
+
+    </script>
 </head>
 
 <body>
@@ -38,12 +67,9 @@ $result = $promo->view_record();
             <?php while ($data = mysqli_fetch_assoc($result)) {  ?>
                 <tr>
                     <td><?php echo $data['name'] ?></td>
-                    <td>
-                        <a href="./includes/delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a>
-                    </td>
-                    <td>
-                        <a href="./includes/edit.php?id=<?php echo $data['id'] ?>"> Modifier</a>
-                    </td>
+
+                    <td><a href="./includes/delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a></td>
+                    <td><a href="./includes/edit.php?id=<?php echo $data['id'] ?>"> Modifier</a></td>
                 </tr>
             <?php } ?>
 
@@ -52,31 +78,3 @@ $result = $promo->view_record();
 </body>
 
 </html>
-
-<script>
-    $(document).ready(function() {
-        load_data();
-
-        function load_data(query) {
-            $.ajax({
-                url: "./includes/search.php",
-                method: "post",
-                data: {
-                    query: query
-                },
-                success: function(data) {
-                    $('#result').html(data);
-                }
-            });
-        }
-
-        $('#search_text').keyup(function() {
-            var search = $(this).val();
-            if (search != '') {
-                load_data(search);
-            } else {
-                load_data();
-            }
-        });
-    });
-</script>

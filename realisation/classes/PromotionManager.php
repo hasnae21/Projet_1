@@ -103,10 +103,8 @@ class Promotion extends Connection
     }
 
     ////////////////////////////////////////////////////////Rechercher /S
-    public function Search_Record()
-    {
+    // public function Search_Record()
+    // {
+    // }
 
-    
-
-    }
 }
