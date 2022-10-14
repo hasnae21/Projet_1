@@ -8,23 +8,23 @@ require_once('./classes/PromotionManager.php');
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
+
 <body>
     <center>
+        <!-- store new data in database -->
+        <p><?php
+            $promo = new Promotion();
+            $promo->Store_Record();
+        ?></p>
+
         <h2>Ajouter promotion</h2>
-        
-        <form method="post" autocomplete="off" >
+
+        <form method="post" autocomplete="off">
             <label> Nom de la promotion :</label>
             <input type="text" name="promo_name" required>
-            <button name="btn_save"> 
-                Envoyer
-            </button>
+            <button name="btn_save">Envoyer</button>
         </form>
 
-        <!-- store new data in database -->
-        <p><?php 
-            $promo= new Promotion();
-            $promo->Store_Record(); 
-        ?></p>
     </center>
 </body>
 </html>
