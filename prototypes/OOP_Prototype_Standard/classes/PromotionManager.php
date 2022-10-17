@@ -2,7 +2,7 @@
 require_once('Connection.php');
 $db = new Connection();
 
-class Promotion extends Connection
+class PromotionManager extends Connection
 {
 
     public $msg;

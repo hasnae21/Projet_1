@@ -13,7 +13,7 @@ require_once('./classes/PromotionManager.php');
     <center>
         <!-- store new data in database -->
         <p><?php
-            $promo = new Promotion();
+            $promo = new PromotionManager();
             $promo->Store_Record();
         ?></p>
 
@@ -22,7 +22,7 @@ require_once('./classes/PromotionManager.php');
         <form method="post" autocomplete="off">
             <label> Nom de la promotion :</label>
             <input type="text" name="promo_name" required>
-            <button name="btn_save">Envoyer</button>
+            <button name="btn_save" >Envoyer</button>
         </form>
 
     </center>

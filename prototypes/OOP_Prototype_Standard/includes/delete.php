@@ -1,6 +1,6 @@
 <?php
 require_once('../classes/Connection.php');
-$promo = new Promotion();
+$promo = new PromotionManager();
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];

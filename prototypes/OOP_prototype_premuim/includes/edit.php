@@ -1,6 +1,6 @@
 <?php
 require('../classes/Connection.php');
-$promo = new Promotion();
+$promo = new PromotionManager();
 
 $id = $_GET['id'];
 $promo->update();

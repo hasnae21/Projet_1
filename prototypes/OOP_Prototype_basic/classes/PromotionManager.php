@@ -3,7 +3,7 @@ require_once('./classes/Connection.php');
 
 $db = new Connection();
 
-class Promotion extends Connection
+class PromotionManager extends Connection
 {
     function insert_record($r)
     {

@@ -1,6 +1,6 @@
 <?php
 require_once('./classes/Connection.php');
-$promo = new Promotion();
+$promo = new PromotionManager();
 $result = $promo->view_record();
 ?>
 
