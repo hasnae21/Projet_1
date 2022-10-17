@@ -12,7 +12,7 @@ $result = $promo->view_record();
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./Assets/style.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 
@@ -68,29 +68,4 @@ $result = $promo->view_record();
 </body>
 
 </html>
-<script>
-    $(document).ready(function() {
-        load_data();
-
-        function load_data(query) {
-            $.ajax({
-                url: "./includes/search.php",
-                method: "post",
-                data: {
-                    query: query
-                },
-                success: function(data) {
-                    $('#result').html(data);
-                }
-            });
-        }
-        $('#search_text').keyup(function() {
-            var search = $(this).val();
-            if (search != '') {
-                load_data(search);
-            } else {
-                load_data();
-            }
-        });
-    });
-</script>
+<script src="./Assets/search.js"></script>
