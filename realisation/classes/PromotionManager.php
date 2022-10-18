@@ -1,6 +1,5 @@
 <?php
 require_once('Connection.php');
-
 $db = new Connection();
 
 class PromotionManager extends Connection
@@ -28,10 +27,10 @@ class PromotionManager extends Connection
 
             if ($this->insert_record($name)) {
                 $msg = '<div> <p> Your Record Has Been Saved :)</p> </div> ';
-                header("location:../index.php?msg=" . $msg);
+                header("location:../functions/add.php?msg=" . $msg);
             } else {
                 $msg = '<div> <p> Failed   ): </p> </div> ';
-                header("location:../includes/add.php?msg=" . $msg);
+                header("location:../functions/add.php?msg=" . $msg);
             }
         }
     }
@@ -56,7 +55,7 @@ class PromotionManager extends Connection
         return $data;
     }
 
-    //////////////////////////////////////////////////////Modifier /U
+    /////////////////////////////////////////////////////////Modifier /U
     function update_record($id, $name)
     {
         global $db;
@@ -86,7 +85,7 @@ class PromotionManager extends Connection
         }
     }
 
-    ///////////////////////////////////////////////////////Suprimer /D
+    ////////////////////////////////////////////////////////Suprimer /D
     public function Delete_Record($id)
     {
         global $db;
@@ -112,4 +111,5 @@ class PromotionManager extends Connection
         $result = mysqli_query($db->con, $sql);
         return $result;
     }
+
 }

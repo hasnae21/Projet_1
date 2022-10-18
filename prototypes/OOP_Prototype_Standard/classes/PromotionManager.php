@@ -32,7 +32,7 @@ class PromotionManager extends Connection
                 header("location:../index.php?msg=" . $msg);
             } else {
                 $msg = '<div> <p> Failed   ): </p> </div> ';
-                header("location:../includes/add.php?msg=" . $msg);
+                header("location:../functions/add.php?msg=" . $msg);
             }
         }
     }

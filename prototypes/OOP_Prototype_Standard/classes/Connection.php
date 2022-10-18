@@ -37,7 +37,4 @@ class Connection
         return $con;
     }
 
-
-
-
 }

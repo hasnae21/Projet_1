@@ -1,14 +1,3 @@
-<?php
-require('../classes/Connection.php');
-$promo = new PromotionManager();
-
-$id = $_GET['id'];
-$promo->update();
-$result = $promo->get_record($id);
-$data = mysqli_fetch_assoc($result);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +7,19 @@ $data = mysqli_fetch_assoc($result);
 </head>
 
 <body>
-    <center>
+
+<?php
+require_once('../classes/Connection.php');
+$promo = new PromotionManager();
+
+$id = $_GET['id'];
+$promo->update();
+$result = $promo->get_record($id);
+$data = mysqli_fetch_assoc($result);
+
+?>
+    <div style="padding:10px;">
+
         <h2>Modifier Promotion</h2>
 
         <!-- store updated data in database -->
@@ -31,10 +32,9 @@ $data = mysqli_fetch_assoc($result);
             <button name="btn_update"> Envoyer </button>
         </form>
 
-    </center>
-    <a href="../index.php">
-        <- Retour 
-    </a>
+    </div>
+    <br>
+    <a href="../index.php"> <- Retour sans modification </a>
 </body>
 
 </html>

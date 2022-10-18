@@ -4,7 +4,6 @@ $db = new Connection();
 
 class PromotionManager extends Connection
 {
-
     public $msg;
 
     ////////////////////////////////////////////////////////Ajouter /C    
@@ -24,14 +23,14 @@ class PromotionManager extends Connection
     public function Store_Record()
     {
         if (isset($_POST['btn_save'])) {
-            $name = addslashes($_POST['promo_name']);
+            $name = $_POST['promo_name'];
 
             if ($this->insert_record($name)) {
                 $msg = '<div> <p> Your Record Has Been Saved :)</p> </div> ';
-                header("location:../index.php?msg=" . $msg);
+                header("location:../functions/add.php?msg=" . $msg);
             } else {
                 $msg = '<div> <p> Failed   ): </p> </div> ';
-                header("location:../includes/add.php?msg=" . $msg);
+                header("location:../functions/add.php?msg=" . $msg);
             }
         }
     }
@@ -56,8 +55,8 @@ class PromotionManager extends Connection
         return $data;
     }
 
-    //////////////////////////////////////////////////////Modifier /U
-    public function update_record($id, $name)
+    /////////////////////////////////////////////////////////Modifier /U
+    function update_record($id, $name)
     {
         global $db;
 
@@ -74,7 +73,7 @@ class PromotionManager extends Connection
     {
         if (isset($_POST['btn_update'])) {
             $id = $_POST['id'];
-            $name = addslashes($_POST['promo_name']);
+            $name = $_POST['promo_name'];
 
             if ($this->update_record($id, $name)) {
                 $msg = '<div> <p> Your Record Has Been Updated :)</p> </div>';
@@ -86,7 +85,7 @@ class PromotionManager extends Connection
         }
     }
 
-    ///////////////////////////////////////////////////////Suprimer /D
+    ////////////////////////////////////////////////////////Suprimer /D
     public function Delete_Record($id)
     {
         global $db;
@@ -100,4 +99,17 @@ class PromotionManager extends Connection
             return false;
         }
     }
+
+    ////////////////////////////////////////////////////////Rechercher /S
+    public function Search_Record($s)
+    {
+        global $db;
+
+        $sql = "
+        SELECT * FROM promotion WHERE name LIKE '%" . $s . "%' OR id LIKE '%" . $s . "%' 
+        ";
+        $result = mysqli_query($db->con, $sql);
+        return $result;
+    }
+
 }

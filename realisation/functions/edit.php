@@ -1,5 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier</title>
+</head>
+
+<body>
+
 <?php
-require('../classes/Connection.php');
+require_once('../classes/Connection.php');
 $promo = new PromotionManager();
 
 $id = $_GET['id'];
@@ -8,18 +18,8 @@ $result = $promo->get_record($id);
 $data = mysqli_fetch_assoc($result);
 
 ?>
+    <div style="padding:10px;">
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Modifier</title>
-</head>
-
-<body>
-    <center>
         <h2>Modifier Promotion</h2>
 
         <!-- store updated data in database -->
@@ -32,10 +32,9 @@ $data = mysqli_fetch_assoc($result);
             <button name="btn_update"> Envoyer </button>
         </form>
 
-    </center>
-    <a href="../index.php">
-        <- Retour 
-    </a>
+    </div>
+    <br>
+    <a href="../index.php"> <- Retour sans modification </a>
 </body>
 
 </html>
