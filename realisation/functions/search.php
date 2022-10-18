@@ -1,4 +1,4 @@
-<table border="1px;">
+<table class="table table-bordered">
 
 	<?php
 	require('../classes/Connection.php');
@@ -26,8 +26,8 @@
 				<tr>
 					<td><?php echo $filter['id'] ?></td>
 					<td><?php echo $filter['name'] ?></td>
-					<td><a href="./functions/delete.php?id=<?php echo $filter['id'] ?>"> Supprimer </a></td>
-					<td><a href="./functions/edit.php?id=<?php echo $filter['id'] ?>"> Modifier</a></td>
+					<td><a class="btn btn-danger" href="./functions/delete.php?id=<?php echo $filter['id'] ?>"> Supprimer </a></td>
+					<td><a class="btn btn-warning" href="./functions/edit.php?id=<?php echo $filter['id'] ?>"> Modifier</a></td>
 				</tr>
 
 			<?php
@@ -35,8 +35,8 @@
 		} else {
 			echo 'Data introuvable :(';
 		}
-	} 
-	
+	}
+
 	/////////////////////affichage action
 	else {
 		$result = $promo->view_record();
@@ -57,8 +57,8 @@
 				<tr>
 					<td><?php echo $data['id'] ?></td>
 					<td><?php echo $data['name'] ?></td>
-					<td><a href="./functions/delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a></td>
-					<td><a href="./functions/edit.php?id=<?php echo $data['id'] ?>"> Modifier</a></td>
+					<td><a class="btn btn-danger" href="./functions/delete.php?id=<?php echo $data['id'] ?>"> Supprimer </a></td>
+					<td><a class="btn btn-warning" href="./functions/edit.php?id=<?php echo $data['id'] ?>"> Modifier</a></td>
 				</tr>
 
 	<?php

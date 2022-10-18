@@ -3,38 +3,52 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <title>Modifier</title>
 </head>
 
 <body>
 
-<?php
-require_once('../classes/Connection.php');
-$promo = new PromotionManager();
+    <?php
+    require_once('../classes/Connection.php');
+    $promo = new PromotionManager();
 
-$id = $_GET['id'];
-$promo->update();
-$result = $promo->get_record($id);
-$data = mysqli_fetch_assoc($result);
+    $id = $_GET['id'];
+    $promo->update();
+    $result = $promo->get_record($id);
+    $data = mysqli_fetch_assoc($result);
 
-?>
-    <div style="padding:10px;">
+    ?>
+    <div style="padding:40px;  width:700px; margin:auto;">
 
-        <h2>Modifier Promotion</h2>
+        <h3 class="text-success">Modifier Promotion</h3>
 
         <!-- store updated data in database -->
         <?php $promo->Store_Record(); ?>
-
-        <form method="POST" autocomplete="off">
-            <label> Nom de la promotion :</label>
-            <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
-            <input type="text" name="promo_name" required value="<?php echo $data['name']; ?>">
-            <button name="btn_update"> Envoyer </button>
-        </form>
-
+        <div style="padding: 20px 0px;">
+            <form method="post" autocomplete="off">
+                <div class="row g-2" style="align-items:center;">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input class="form-control" type="hidden" name="id" value="<?php echo $data['id']; ?>" required>
+                            <input class="form-control" type="text" id="promo_name" name="id" value="<?php echo $data['name']; ?>" required>
+                            <label for="promo_name"> Nom de la promotion :</label>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <button class="btn btn-success btn-lg" name="btn_update"> Envoyer </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+        <a class="btn btn-primary" href="../index.php">
+            <- Retour sans modification </a>
     </div>
-    <br>
-    <a href="../index.php"> <- Retour sans modification </a>
+
 </body>
 
 </html>
