@@ -11,7 +11,7 @@ $promo = new PromotionManager();
 </head>
 
 <body>
-    <center>
+
     <h2> Ajouter promotion</h2>
 
         <div style="color:blue;">
@@ -28,7 +28,7 @@ $promo = new PromotionManager();
             <button name="btn_save"> Envoyer </button>
         </form>
 
-    </center>
+
     <a href="../index.php"><- Retour</a>
 </body>
 

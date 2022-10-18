@@ -15,7 +15,7 @@ $data = mysqli_fetch_assoc($result);
 </head>
 
 <body>
-    <center>
+
     <h2>Modifier Promotion</h2>
 
         <!-- store updated data in database -->
@@ -28,7 +28,7 @@ $data = mysqli_fetch_assoc($result);
             <button name="btn_update"> Envoyer </button>
         </form>
 
-    </center>
+
     <a href="../index.php"><- Retour</a>
 </body>
 

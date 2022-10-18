@@ -13,7 +13,6 @@ $result = $promo->view_record();
 </head>
 
 <body>
-    <center>
         <h1>Promotions</h1>
         <div style="padding: 10px;">
             <input type="button" onclick="location.href='./functions/add.php';" value="Ajouter promotion" />
@@ -39,7 +38,6 @@ $result = $promo->view_record();
             <?php } ?>
 
         </table>
-    </center>
 </body>
 
 </html>
