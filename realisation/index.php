@@ -8,22 +8,22 @@
 </head>
 
 <body>
-    
-    <div style="padding: 10px; margin:auto;">
+    <center>
 
-        <h1>Promotions</h1>
-        <br>
-        <input type="button" onclick="location.href='./functions/add.php';" value="Ajouter une promotion" />
-        <input type="text" name="search_text" id="search_text" placeholder="Rechercher une promotion" />
-    </div>
+        <div style="padding: 15px;">
+            <h1>Promotions</h1>
+            <br>
+            <input type="button" onclick="location.href='./functions/add.php';" value="Ajouter une promotion" />
+            <input type="text" name="search_text" id="search_text" placeholder="Rechercher une promotion" />
+        </div>
+        <div style="padding:10px">
+            <!-- add validation message -->
+            <?= $_GET['msg'] ?? '' ?>
+        </div>
+        <div id="result">
+        </div>
 
-    <div style="padding:10px">
-        <!-- add validation message -->
-        <?= $_GET['msg'] ?? '' ?>
-    </div>
-
-    <div id="result">
-    </div>
+    </center>
 </body>
 <script src="./assets/script.js"></script>
 
